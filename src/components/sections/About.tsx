@@ -32,7 +32,7 @@ export function About() {
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.p
-          className="font-mono text-sm text-[#3b82f6] mb-3"
+          className="font-mono text-sm text-[var(--accent)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -49,18 +49,18 @@ export function About() {
             whileInView="visible"
             viewport={vp}
           >
-            <h2 className="text-3xl font-bold text-[#f5f5f5] mb-6">
+            <h2 className="text-3xl font-bold text-[var(--fg)] mb-6">
               Building AI that ships.
             </h2>
-            <div className="space-y-4 text-[#888888] leading-relaxed">
+            <div className="space-y-4 text-[var(--secondary)] leading-relaxed">
               <p>
-                I&apos;m Shashank — an AI engineer based in Hyderabad with a B.E. in Artificial
+                I&apos;m Shashank, an AI engineer based in Hyderabad with a B.E. in Artificial
                 Intelligence and Data Science from CBIT. I work across the full AI stack: from
                 training research models to shipping production APIs and mobile apps.
               </p>
               <p>
                 My background spans conversational AI at Yellow.ai, security operations at
-                Secureworks, data intelligence at Novartis, and independent consulting — giving me
+                Secureworks, data intelligence at Novartis, and independent consulting, giving me
                 a rare cross-domain perspective on how AI actually lands in real organizations.
               </p>
               <p>
@@ -79,34 +79,30 @@ export function About() {
             className="flex flex-col items-center md:items-start gap-8"
           >
             {/* Profile photo */}
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border border-[#1f1f1f] bg-[#111111] flex items-center justify-center">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-[var(--border)]">
               <Image
                 src="/images/profile.jpg"
                 alt="Shashank Anchuri"
                 fill
-                className="object-cover"
-                onError={() => {}}
-                priority
+                className="object-cover object-top"
               />
-              {/* Fallback initials shown via CSS if image fails */}
-              <span className="absolute text-2xl font-bold text-[#3b82f6] select-none">SA</span>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 w-full">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center md:text-left">
-                  <p className="text-2xl font-bold text-[#f5f5f5]">{stat.value}</p>
-                  <p className="text-xs text-[#888888] mt-1">{stat.label}</p>
+                  <p className="text-2xl font-bold text-[var(--fg)]">{stat.value}</p>
+                  <p className="text-xs text-[var(--secondary)] mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
 
             {/* Education */}
-            <div className="border border-[#1f1f1f] bg-[#111111] rounded-sm p-4 w-full">
-              <p className="text-xs text-[#888888] uppercase tracking-wider mb-1">Education</p>
-              <p className="text-sm text-[#f5f5f5] font-medium">B.E. in AI & Data Science</p>
-              <p className="text-xs text-[#888888] mt-0.5">Chaitanya Bharathi Institute of Technology · 2021–2025</p>
+            <div className="border border-[var(--border)] bg-[var(--surface)] rounded-sm p-4 w-full">
+              <p className="text-xs text-[var(--secondary)] uppercase tracking-wider mb-1">Education</p>
+              <p className="text-sm text-[var(--fg)] font-medium">B.E. in AI & Data Science</p>
+              <p className="text-xs text-[var(--secondary)] mt-0.5">Chaitanya Bharathi Institute of Technology · 2021–2025</p>
             </div>
           </motion.div>
         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Github, Linkedin, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -31,7 +32,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#080808]/80 backdrop-blur-md border-b border-[#1f1f1f]'
+          ? 'bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]'
           : 'bg-transparent'
       }`}
     >
@@ -39,9 +40,9 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-sm text-[#888888] hover:text-[#f5f5f5] transition-colors"
+          className="font-mono text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
         >
-          <span className="text-[#3b82f6]">sa</span>.dev
+          <span className="text-[var(--accent)]">Shashank</span> Anchuri
         </Link>
 
         {/* Desktop nav */}
@@ -50,21 +51,22 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-[#888888] hover:text-[#f5f5f5] transition-colors"
+              className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        {/* Desktop social icons */}
+        {/* Desktop social icons + theme toggle */}
         <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="https://github.com/saishashank-a"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="text-[#888888] hover:text-[#f5f5f5] transition-colors"
+            className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
           >
             <Github size={18} />
           </a>
@@ -73,7 +75,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="text-[#888888] hover:text-[#f5f5f5] transition-colors"
+            className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
           >
             <Linkedin size={18} />
           </a>
@@ -81,7 +83,7 @@ export function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#888888] hover:text-[#f5f5f5] transition-colors"
+          className="md:hidden text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -97,7 +99,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#080808]/95 backdrop-blur-md border-b border-[#1f1f1f] px-6 pb-6"
+            className="md:hidden bg-[var(--background)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 pb-6"
           >
             <div className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
@@ -105,18 +107,19 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className="text-sm text-[#888888] hover:text-[#f5f5f5] transition-colors py-1"
+                  className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors py-1"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center gap-4 pt-2 border-t border-[#1f1f1f]">
+              <div className="flex items-center gap-4 pt-2 border-t border-[var(--border)]">
+                <ThemeToggle />
                 <a
                   href="https://github.com/saishashank-a"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
-                  className="text-[#888888] hover:text-[#f5f5f5] transition-colors"
+                  className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
                 >
                   <Github size={18} />
                 </a>
@@ -125,7 +128,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
-                  className="text-[#888888] hover:text-[#f5f5f5] transition-colors"
+                  className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
                 >
                   <Linkedin size={18} />
                 </a>
