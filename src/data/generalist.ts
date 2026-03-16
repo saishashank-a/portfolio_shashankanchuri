@@ -13,11 +13,11 @@ export const domains: Domain[] = [
   {
     icon: '⚙️',
     title: 'Production Engineering',
-    example: 'AIOps platform at Secureworks — anomaly detection on enterprise log pipelines',
+    example: 'AIOps platform at Secureworks, anomaly detection on enterprise log pipelines',
   },
   {
     icon: '📱',
     title: 'Full-Stack Products',
-    example: 'Shipped across React Native, Django, Next.js — from mobile to API to web',
+    example: 'Shipped across React Native, Django, Next.js, from mobile to API to web',
   },
 ]

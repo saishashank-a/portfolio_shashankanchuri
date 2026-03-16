@@ -23,10 +23,10 @@ export function Experience() {
   const vp = { once: true, amount: 0.2 as const }
 
   return (
-    <section id="experience" className="py-24 px-6 border-t border-[#1f1f1f]">
+    <section id="experience" className="py-24 px-6 border-t border-[var(--border)]">
       <div className="max-w-6xl mx-auto">
         <motion.p
-          className="font-mono text-sm text-[#3b82f6] mb-3"
+          className="font-mono text-sm text-[var(--accent)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -35,7 +35,7 @@ export function Experience() {
           // Experience
         </motion.p>
         <motion.h2
-          className="text-3xl font-bold text-[#f5f5f5] mb-12"
+          className="text-3xl font-bold text-[var(--fg)] mb-12"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -53,7 +53,7 @@ export function Experience() {
         >
           {/* Timeline vertical line */}
           <div
-            className="absolute left-0 top-2 bottom-2 w-px bg-[#1f1f1f] hidden sm:block"
+            className="absolute left-0 top-2 bottom-2 w-px bg-[var(--border)] hidden sm:block"
             aria-hidden="true"
           />
 
@@ -66,25 +66,25 @@ export function Experience() {
               >
                 {/* Timeline dot */}
                 <span
-                  className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-[#3b82f6] hidden sm:block"
+                  className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-[var(--accent)] hidden sm:block"
                   aria-hidden="true"
                 />
 
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                   <div>
-                    <h3 className="text-base font-semibold text-[#f5f5f5]">{exp.role}</h3>
-                    <p className="text-sm text-[#3b82f6]">{exp.company}</p>
+                    <h3 className="text-base font-semibold text-[var(--fg)]">{exp.role}</h3>
+                    <p className="text-sm text-[var(--accent)]">{exp.company}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-xs text-[#888888]">{exp.period}</p>
-                    <p className="text-xs text-[#444444]">{exp.location}</p>
+                    <p className="text-xs text-[var(--secondary)]">{exp.period}</p>
+                    <p className="text-xs text-[var(--very-muted)]">{exp.location}</p>
                   </div>
                 </div>
 
                 <ul className="space-y-1.5">
                   {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-[#888888] leading-relaxed">
-                      <span className="text-[#3b82f6] shrink-0 mt-0.5" aria-hidden="true">—</span>
+                    <li key={i} className="flex gap-3 text-sm text-[var(--secondary)] leading-relaxed">
+                      <span className="text-[var(--accent)] shrink-0 mt-[6px] w-1 h-1 rounded-full bg-[var(--accent)] block" aria-hidden="true" />
                       {bullet}
                     </li>
                   ))}

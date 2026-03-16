@@ -24,7 +24,7 @@ export const experience: ExperienceItem[] = [
     period: 'Oct 2025 – Present',
     location: 'Hyderabad',
     bullets: [
-      'Delivered end-to-end custom AI and software solutions for clients — requirement gathering to deployment.',
+      'Delivered end-to-end custom AI and software solutions for clients, requirement gathering to deployment.',
       'Developed automation scripts and data pipelines, reducing manual workflow time for client businesses.',
       'Applied prompt engineering and RAG pipelines for lead generation and client funneling.',
     ],
@@ -35,7 +35,7 @@ export const experience: ExperienceItem[] = [
     period: 'Apr 2025 – Sept 2025',
     location: 'Bangalore',
     bullets: [
-      'Built modular conversational AI workflows integrating APIs, auth layers, and backend microservices — improved task completion rates by 25%.',
+      'Built modular conversational AI workflows integrating APIs, auth layers, and backend microservices, improved task completion rates by 25%.',
       'Designed scalable bot architectures enabling multi-client reuse, reducing development effort by 20%.',
       'Coordinated with frontend, backend, and design teams to deliver consistent conversational user journeys.',
     ],
@@ -46,7 +46,7 @@ export const experience: ExperienceItem[] = [
     period: 'Oct 2024 – Apr 2025',
     location: 'Hyderabad',
     bullets: [
-      'Developed automated and manual test suites validating Salesforce flows and third-party integrations — improved release stability by 30%.',
+      'Developed automated and manual test suites validating Salesforce flows and third-party integrations, improved release stability by 30%.',
       'Built reusable test-data frameworks that increased coverage while cutting QA cycle time by 22%.',
     ],
   },

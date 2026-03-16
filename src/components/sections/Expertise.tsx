@@ -24,10 +24,10 @@ export function Expertise() {
   const cardVp = { once: true, amount: 0.3 as const }
 
   return (
-    <section id="expertise" className="py-24 px-6 border-t border-[#1f1f1f]">
+    <section id="expertise" className="py-24 px-6 border-t border-[var(--border)]">
       <div className="max-w-6xl mx-auto">
         <motion.p
-          className="font-mono text-sm text-[#3b82f6] mb-3"
+          className="font-mono text-sm text-[var(--accent)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -37,7 +37,7 @@ export function Expertise() {
         </motion.p>
 
         <motion.h2
-          className="text-3xl font-bold text-[#f5f5f5] mb-3"
+          className="text-3xl font-bold text-[var(--fg)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -46,7 +46,7 @@ export function Expertise() {
           Why generalist?
         </motion.h2>
         <motion.p
-          className="text-[#888888] mb-12 max-w-xl"
+          className="text-[var(--secondary)] mb-12 max-w-xl"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -66,17 +66,17 @@ export function Expertise() {
             <motion.article
               key={domain.title}
               variants={prefersReduced ? {} : cardItem}
-              className="group relative border border-[#1f1f1f] bg-[#111111] p-6 rounded-sm transition-colors duration-300 hover:border-[#3b82f6]/30"
+              className="group relative border border-[var(--border)] bg-[var(--surface)] p-6 rounded-sm transition-colors duration-300 hover:border-[var(--accent)]/30"
             >
               {/* Animated left-edge accent line */}
               <span
-                className="absolute left-0 top-0 h-full w-0.5 bg-[#3b82f6] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100"
+                className="absolute left-0 top-0 h-full w-0.5 bg-[var(--accent)] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100"
                 aria-hidden="true"
               />
 
               <div className="text-2xl mb-4" aria-hidden="true">{domain.icon}</div>
-              <h3 className="text-base font-semibold text-[#f5f5f5] mb-2">{domain.title}</h3>
-              <p className="text-sm text-[#888888] leading-relaxed">{domain.example}</p>
+              <h3 className="text-base font-semibold text-[var(--fg)] mb-2">{domain.title}</h3>
+              <p className="text-sm text-[var(--secondary)] leading-relaxed">{domain.example}</p>
             </motion.article>
           ))}
         </motion.div>

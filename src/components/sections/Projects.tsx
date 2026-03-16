@@ -24,10 +24,10 @@ export function Projects() {
   const vp = { once: true, amount: 0.1 as const }
 
   return (
-    <section id="projects" className="py-24 px-6 border-t border-[#1f1f1f]">
+    <section id="projects" className="py-24 px-6 border-t border-[var(--border)]">
       <div className="max-w-6xl mx-auto">
         <motion.p
-          className="font-mono text-sm text-[#3b82f6] mb-3"
+          className="font-mono text-sm text-[var(--accent)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -35,15 +35,23 @@ export function Projects() {
         >
           // Projects
         </motion.p>
-        <motion.h2
-          className="text-3xl font-bold text-[#f5f5f5] mb-12"
+        <motion.div
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={vp}
         >
-          Things I&apos;ve built.
-        </motion.h2>
+          <h2 className="text-3xl font-bold text-[var(--fg)]">Things I&apos;ve built.</h2>
+          <a
+            href="https://github.com/saishashank-a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:underline shrink-0"
+          >
+            See all on GitHub →
+          </a>
+        </motion.div>
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"

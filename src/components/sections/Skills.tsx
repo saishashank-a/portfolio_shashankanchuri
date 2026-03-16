@@ -23,10 +23,10 @@ export function Skills() {
   const vp = { once: true, amount: 0.2 as const }
 
   return (
-    <section id="skills" className="py-24 px-6 border-t border-[#1f1f1f]">
+    <section id="skills" className="py-24 px-6 border-t border-[var(--border)]">
       <div className="max-w-6xl mx-auto">
         <motion.p
-          className="font-mono text-sm text-[#3b82f6] mb-3"
+          className="font-mono text-sm text-[var(--accent)] mb-3"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -35,7 +35,7 @@ export function Skills() {
           // Skills
         </motion.p>
         <motion.h2
-          className="text-3xl font-bold text-[#f5f5f5] mb-12"
+          className="text-3xl font-bold text-[var(--fg)] mb-12"
           variants={prefersReduced ? {} : sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -53,7 +53,7 @@ export function Skills() {
               whileInView="visible"
               viewport={vp}
             >
-              <h3 className="text-xs font-mono text-[#888888] uppercase tracking-wider mb-4">
+              <h3 className="text-xs font-mono text-[var(--secondary)] uppercase tracking-wider mb-4">
                 {group.label}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -61,7 +61,7 @@ export function Skills() {
                   <motion.span
                     key={skill}
                     variants={prefersReduced ? {} : pillItem}
-                    className="text-sm font-mono text-[#f5f5f5] bg-[#111111] border border-[#1f1f1f] px-3 py-1.5 rounded-sm hover:border-[#3b82f6]/40 hover:text-[#3b82f6] transition-colors duration-200 cursor-default"
+                    className="text-sm font-mono text-[var(--fg)] bg-[var(--surface)] border border-[var(--border)] px-3 py-1.5 rounded-sm hover:border-[var(--accent)]/40 hover:text-[var(--accent)] transition-colors duration-200 cursor-default"
                   >
                     {skill}
                   </motion.span>
