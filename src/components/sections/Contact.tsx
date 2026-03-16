@@ -9,8 +9,8 @@ const sectionVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 }
 
-// Replace with your actual Formspree endpoint: https://formspree.io/f/YOUR_ID
-const FORMSPREE_URL = 'https://formspree.io/f/xbdzanyb'
+const WEB3FORMS_URL = 'https://api.web3forms.com/submit'
+const WEB3FORMS_KEY = '9638a92b-ab20-42ba-a504-ceeccb265948'
 
 export function Contact() {
   const prefersReduced = useReducedMotion()
@@ -38,7 +38,8 @@ export function Contact() {
     const form = e.currentTarget
     const data = new FormData(form)
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      data.append('access_key', WEB3FORMS_KEY)
+      const res = await fetch(WEB3FORMS_URL, {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },

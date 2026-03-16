@@ -13,7 +13,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob:",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://formspree.io",
+      "connect-src 'self' https://api.web3forms.com",
       "frame-ancestors 'none'",
     ].join('; '),
   },
