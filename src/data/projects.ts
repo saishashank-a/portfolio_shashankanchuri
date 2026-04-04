@@ -10,6 +10,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'PrepWise',
+    impact: 'Zero-cost AI interview prep — resume parsing, gap analysis, live code execution in the browser',
+    description:
+      'Browser-first interview prep platform. Parses resumes (PDF/DOCX), analyzes job descriptions for skill gaps, and runs real Python, SQL, and JavaScript code via WebAssembly — no backend, no API costs.',
+    tech: ['Next.js', 'TypeScript', 'Pyodide', 'PGlite', 'Firebase', 'Three.js'],
+    github: 'https://github.com/saishashank-a/PrepWise',
+    demo: 'https://prep-wise-tawny-ten.vercel.app/',
+    featured: true,
+  },
+  {
     title: 'E-commerce RAG Engine',
     impact: 'Production-grade semantic search with hallucination detection',
     description:
