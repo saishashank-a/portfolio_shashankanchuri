@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AudioPlayer } from './AudioPlayer'
+import { ShareBar } from './ShareBar'
 
 export const metadata: Metadata = {
   title: 'TurboQuant: How Google just made AI 6x cheaper to run | Shashank Anchuri',
@@ -327,6 +328,9 @@ export default function TurboQuantPost() {
 
         {/* Footer */}
         <div className="mt-12 pt-8 border-t border-[var(--border)]">
+          <div className="mb-6">
+            <ShareBar />
+          </div>
           <p className="text-sm text-[var(--secondary)] mb-4">
             Follow along for more AI research breakdowns.
           </p>
