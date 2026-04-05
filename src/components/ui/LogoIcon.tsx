@@ -8,7 +8,7 @@ export function LogoIcon({ size = 32 }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="50" cy="50" r="46" fill="var(--muted)" />
+      <circle cx="50" cy="50" r="46" fill="var(--accent)" />
       <text
         x="50"
         y="76"
@@ -16,7 +16,7 @@ export function LogoIcon({ size = 32 }: { size?: number }) {
         fontWeight="900"
         fontSize="78"
         textAnchor="middle"
-        fill="var(--accent)"
+        fill="white"
       >S</text>
     </svg>
   )
