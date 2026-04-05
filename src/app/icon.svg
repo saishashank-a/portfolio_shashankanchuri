@@ -1,10 +1,5 @@
 <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <mask id="logo-s-mask">
-      <rect width="100" height="100" fill="white"/>
-      <text x="50" y="76" font-family="Arial Black, 'Arial Bold', Gadget, sans-serif"
-        font-weight="900" font-size="78" text-anchor="middle" fill="black">S</text>
-    </mask>
-  </defs>
-  <circle cx="50" cy="50" r="46" fill="#8a8a8a" mask="url(#logo-s-mask)"/>
+  <circle cx="50" cy="50" r="46" fill="#9a8e7e"/>
+  <text x="50" y="76" font-family="Arial Black, 'Arial Bold', Gadget, sans-serif"
+    font-weight="900" font-size="78" text-anchor="middle" fill="#c96844">S</text>
 </svg>
