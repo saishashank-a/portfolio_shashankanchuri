@@ -25,7 +25,7 @@ export default function TurboQuantPost() {
           href="/blog"
           className="inline-flex items-center gap-1.5 text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors mb-10"
         >
-          ← The AI Weekly
+          ← Context Window
         </Link>
 
         {/* Header */}
@@ -338,7 +338,7 @@ export default function TurboQuantPost() {
             href="/blog"
             className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
           >
-            ← Back to The AI Weekly
+            ← Back to Context Window
           </Link>
         </div>
       </div>

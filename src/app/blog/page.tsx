@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { NotifyForm } from './NotifyForm'
 
 export const metadata: Metadata = {
-  title: 'The AI Weekly | Shashank Anchuri',
+  title: 'Context Window | Shashank Anchuri',
   description:
-    'A weekly newsletter on what happened in AI. Written, not filmed. Launching soon.',
+    'AI research, tools, and ideas worth paying attention to. Written when there\'s something worth saying.',
 }
 
 const posts = [
@@ -25,10 +25,9 @@ export default function BlogPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <p className="font-mono text-sm text-[var(--accent)] mb-3">// Blog</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] mb-3">The AI Weekly</h1>
+        <h1 className="text-3xl font-bold text-[var(--fg)] mb-3">Context Window</h1>
         <p className="text-[var(--secondary)] leading-relaxed mb-12">
-          Every week, what happened in the world of AI. Written, not filmed. No fluff, no hype
-          cycle, just the signal.
+          AI research, tools, and ideas worth paying attention to. Written when there&apos;s something worth saying.
         </p>
 
         {/* Posts */}

@@ -41,18 +41,17 @@ export function BlogPlaceholder() {
           className="max-w-2xl"
         >
           <p className="font-mono text-sm text-[var(--accent)] mb-3">// Blog</p>
-          <h2 className="text-3xl font-bold text-[var(--fg)] mb-4">The AI Weekly</h2>
+          <h2 className="text-3xl font-bold text-[var(--fg)] mb-4">Context Window</h2>
           <p className="text-[var(--secondary)] leading-relaxed mb-8">
-            Every Sunday, what happened in the world of AI this week. Written, not filmed.
-            No fluff, no hype cycle, just the signal.
+            AI research, tools, and ideas worth paying attention to. Written when there&apos;s something worth saying.
           </p>
 
           {/* Newsletter card */}
           <div className="border border-[var(--border)] bg-[var(--surface)] rounded-sm p-6 max-w-md">
             <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-sm text-[var(--fg)]">The AI Weekly</span>
+              <span className="font-mono text-sm text-[var(--fg)]">Context Window</span>
               <span className="text-[10px] font-mono text-[var(--accent)] border border-[var(--accent)]/30 px-2 py-0.5 rounded-full">
-                Coming Soon
+                Live
               </span>
             </div>
 

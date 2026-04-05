@@ -17,7 +17,7 @@ export function NotifyForm() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: 'AI Weekly — new subscriber',
+          subject: 'Context Window — new subscriber',
           email,
         }),
       })
@@ -30,7 +30,7 @@ export function NotifyForm() {
   if (status === 'done') {
     return (
       <p className="text-sm text-emerald-500 max-w-sm mx-auto">
-        Got it! I&apos;ll notify you when The AI Weekly launches.
+        Got it! I&apos;ll notify you when Context Window launches.
       </p>
     )
   }
