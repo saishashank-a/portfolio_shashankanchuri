@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const POST_URL = 'https://shashankanchuri.com/blog/turboquant-how-google-just-made-ai-6x-cheaper'
+const POST_URL = 'https://shashankanchuri.space/blog/turboquant-how-google-just-made-ai-6x-cheaper'
 const POST_TITLE = 'TurboQuant: How Google just made AI 6x cheaper to run'
 
 export function ShareBar() {
