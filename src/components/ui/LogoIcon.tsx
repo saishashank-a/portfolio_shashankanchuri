@@ -1,0 +1,27 @@
+export function LogoIcon({ size = 32 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <mask id="logo-s-mask">
+          <rect width="100" height="100" fill="white" />
+          <path
+            d="M 63,28 C 63,21 57,17 50,17 C 39,17 33,24 33,33 C 33,42 40,47 50,51 C 60,55 67,60 67,69 C 67,77 61,83 50,83 C 43,83 37,80 37,73"
+            stroke="black"
+            strokeWidth="13"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+        </mask>
+      </defs>
+      <circle cx="50" cy="50" r="46" fill="#8a8a8a" mask="url(#logo-s-mask)" />
+    </svg>
+  )
+}

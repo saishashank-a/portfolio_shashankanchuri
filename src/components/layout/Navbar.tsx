@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Github, Linkedin, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { LogoIcon } from '@/components/ui/LogoIcon'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -40,8 +41,9 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
+          className="flex items-center gap-2.5 font-mono text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
         >
+          <LogoIcon size={28} />
           <span className="text-[var(--accent)]">Shashank</span> Anchuri
         </Link>
 
