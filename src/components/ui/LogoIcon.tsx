@@ -22,7 +22,7 @@ export function LogoIcon({ size = 32 }: { size?: number }) {
           >S</text>
         </mask>
       </defs>
-      <circle cx="50" cy="50" r="46" fill="#8a8a8a" mask="url(#logo-s-mask)" />
+      <circle cx="50" cy="50" r="46" fill="currentColor" mask="url(#logo-s-mask)" />
     </svg>
   )
 }
