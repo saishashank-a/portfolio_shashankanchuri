@@ -12,6 +12,8 @@
   --accent: #c96844;
   --accent-hover: #b05a38;
   --accent-glow: rgba(201, 104, 68, 0.18);
+  --logo-bg: #c96844;
+  --logo-band: #ffffff;
 }
 
 /* Dark mode — Claude dark palette */
@@ -26,6 +28,8 @@
   --accent: #c96844;
   --accent-hover: #b05a38;
   --accent-glow: rgba(201, 104, 68, 0.18);
+  --logo-bg: #6b6250;
+  --logo-band: #c96844;
 }
 
 @theme inline {

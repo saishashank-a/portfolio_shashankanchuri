@@ -56,7 +56,7 @@ export function BlogPlaceholder() {
             </div>
 
             <div className="space-y-2 mb-6">
-              {['What OpenAI actually shipped this week', 'The paper everyone is misreading', 'Tool you should know about'].map((line, i) => (
+              {['Research that\'s actually moving things forward', 'The paper worth your time this month', 'A tool that changes how you build'].map((line, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="w-1 h-1 rounded-full bg-[var(--accent)] shrink-0" aria-hidden="true" />
                   <p className="text-xs text-[var(--secondary)]">{line}</p>
