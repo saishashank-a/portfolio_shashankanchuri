@@ -29,7 +29,7 @@ export default function TurboQuantPost() {
         </Link>
 
         {/* Header */}
-        <p className="font-mono text-xs text-[var(--accent)] mb-3">Apr 5, 2026 · AI Research</p>
+        <p className="font-mono text-xs text-[var(--accent)] mb-3">Apr 2026 · AI Research</p>
         <h1 className="text-3xl font-bold text-[var(--fg)] leading-tight mb-6">
           TurboQuant: How Google just made AI 6x cheaper to run, and why you should care
         </h1>

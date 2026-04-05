@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: 'turboquant-how-google-just-made-ai-6x-cheaper',
-    date: 'Apr 5, 2026',
+    date: 'Apr 2026',
     tag: 'AI Research',
     title: 'TurboQuant: How Google just made AI 6x cheaper to run, and why you should care',
     excerpt:
