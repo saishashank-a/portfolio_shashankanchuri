@@ -1,0 +1,3 @@
+# Exclude development files
+.env*.local
+node_modules
