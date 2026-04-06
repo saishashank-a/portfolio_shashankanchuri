@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react'
 
-export function AudioPlayer({ src }: { src: string }) {
+export function AudioPlayer({ src, title = 'TurboQuant: How Google just made AI 6x cheaper' }: { src: string; title?: string }) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [playing, setPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -82,7 +82,7 @@ export function AudioPlayer({ src }: { src: string }) {
         {/* Label */}
         <div className="min-w-0 flex-1">
           <p className="text-xs font-mono text-[var(--accent)] mb-1">NotebookLM Podcast</p>
-          <p className="text-sm text-[var(--fg)] truncate">TurboQuant: How Google just made AI 6x cheaper</p>
+          <p className="text-sm text-[var(--fg)] truncate">{title}</p>
         </div>
 
         {/* Time */}
