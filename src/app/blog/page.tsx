@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'arm-agi-cpu-breaks-35-year-rule',
+    date: 'Apr 2026',
+    tag: 'AI Infrastructure',
+    title: 'Arm just broke a 35-year rule and it matters more than you think',
+    excerpt:
+      'For 35 years, Arm designed chips and never sold one. On March 24, 2026, that ended. What the AGI CPU means for agentic AI infrastructure.',
+  },
+  {
     slug: 'turboquant-how-google-just-made-ai-6x-cheaper',
     date: 'Apr 2026',
     tag: 'AI Research',
