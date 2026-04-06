@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 
-const WEB3FORMS_KEY = '9638a92b-ab20-42ba-a504-ceeccb265948'
-
 export function NotifyForm() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
@@ -12,14 +10,10 @@ export function NotifyForm() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: 'Context Window — new subscriber',
-          email,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       })
       setStatus(res.ok ? 'done' : 'error')
     } catch {
