@@ -8,13 +8,14 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { LogoIcon } from '@/components/ui/LogoIcon'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Expertise', href: '#expertise' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Expertise', href: '/#expertise' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Blog', href: '/#blog' },
+  { label: 'Debrief', href: '/debrief' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export function Navbar() {
