@@ -7,6 +7,6 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #1995 | 11:47 AM | 🔵 | Portfolio publish script architecture and deployment flow | ~445 |
-| #1986 | 11:44 AM | 🔵 | Portfolio scripts directory contains email distribution tools | ~338 |
+| #1999 | 11:48 AM | 🟣 | GitHub Actions workflow for automated daily debrief generation | ~692 |
+| #1998 | " | 🟣 | GitHub Actions workflow implemented for automated morning debrief generation | ~556 |
 </claude-mem-context>

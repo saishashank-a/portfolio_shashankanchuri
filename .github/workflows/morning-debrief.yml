@@ -1,0 +1,50 @@
+name: Morning Debrief
+
+on:
+  schedule:
+    # 6:00 AM IST = 00:30 UTC
+    - cron: '30 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  debrief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.email "actions-bot@shashankanchuri.space"
+          git config user.name "Morning Debrief Bot"
+
+      - name: Run research agents + assembler
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: bash scripts/run-debrief.sh
+
+      - name: Publish to portfolio + send email
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DEBRIEF_RECIPIENTS: shashankanchuri@gmail.com,rithikaveda@gmail.com
+        run: node scripts/publish-brief.mjs

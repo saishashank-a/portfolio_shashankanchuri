@@ -7,6 +7,5 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #1995 | 11:47 AM | 🔵 | Portfolio publish script architecture and deployment flow | ~445 |
-| #1986 | 11:44 AM | 🔵 | Portfolio scripts directory contains email distribution tools | ~338 |
+| #1993 | 11:46 AM | ✅ | Agent prompt files copied to Portfolio repository | ~343 |
 </claude-mem-context>
