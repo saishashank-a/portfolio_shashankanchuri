@@ -2,7 +2,9 @@ name: Morning Debrief
 
 on:
   schedule:
-    # 6:00 AM IST = 00:30 UTC
+    # 5:30 AM IST = 00:00 UTC  — research + deploy
+    - cron: '0 0 * * *'
+    # 6:00 AM IST = 00:30 UTC  — send email
     - cron: '30 0 * * *'
   workflow_dispatch:
 
@@ -10,7 +12,8 @@ permissions:
   contents: write
 
 jobs:
-  debrief:
+  research-and-deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
@@ -41,9 +44,35 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: bash scripts/run-debrief.sh
 
-      - name: Publish to portfolio + send email
+      - name: Publish to portfolio (no email)
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DEBRIEF_RECIPIENTS: shashankanchuri@gmail.com,rithikaveda@gmail.com
+          SKIP_EMAIL: 'true'
+        run: node scripts/publish-brief.mjs
+
+  send-email:
+    if: github.event.schedule == '30 0 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Send email only
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DEBRIEF_RECIPIENTS: shashankanchuri@gmail.com,rithikaveda@gmail.com
+          EMAIL_ONLY: 'true'
         run: node scripts/publish-brief.mjs

@@ -218,6 +218,8 @@ function buildEmailHtml({ dateLabel, markdown }) {
 // ─── Main ────────────────────────────────────────────────────────────────────
 async function main() {
   const DRY_RUN = process.argv.includes('--dry-run')
+  const SKIP_EMAIL = process.env.SKIP_EMAIL === 'true'
+  const EMAIL_ONLY = process.env.EMAIL_ONLY === 'true'
   const now = new Date()
   const dateISO = now.toISOString().slice(0, 10)
   const dateLabel = now.toLocaleDateString('en-US', {
@@ -226,6 +228,15 @@ async function main() {
     day: 'numeric',
     year: 'numeric',
   })
+
+  if (EMAIL_ONLY) {
+    // 6 AM job: read already-committed debrief.json and send email
+    const existing = JSON.parse(readFileSync(OUTPUT_JSON, 'utf8'))
+    console.log(`[publish-brief] EMAIL_ONLY — sending for ${existing.date}`)
+    await sendEmail({ dateLabel: existing.date, markdown: existing.content })
+    console.log('[publish-brief] Done.')
+    return
+  }
 
   console.log(`[publish-brief] Assembling markdown for ${dateISO}...`)
   const { markdown, renderedCount } = assembleMarkdown()
@@ -253,7 +264,11 @@ async function main() {
   const pushed = gitPush(dateISO)
   if (pushed) console.log('[publish-brief] Pushed to portfolio — Vercel will redeploy.')
 
-  await sendEmail({ dateLabel, markdown })
+  if (!SKIP_EMAIL) {
+    await sendEmail({ dateLabel, markdown })
+  } else {
+    console.log('[publish-brief] SKIP_EMAIL set — email deferred to 6 AM job.')
+  }
   console.log('[publish-brief] Done.')
 }
 
