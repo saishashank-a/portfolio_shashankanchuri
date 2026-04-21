@@ -46,8 +46,10 @@ run_agent() {
       log "  ✓ [$domain] done in ${elapsed}s ($bytes bytes)"
     fi
   else
-    log "  ✗ [$domain] FAILED — stderr:"
-    cat "$LOG_DIR/${domain}-${DATE}.err" | tee -a "$LOG" || true
+    log "  ✗ [$domain] FAILED — stdout:"
+    cat "$OUTPUT_DIR/${domain}.md" 2>/dev/null | tee -a "$LOG" || true
+    log "  ✗ [$domain] stderr:"
+    cat "$LOG_DIR/${domain}-${DATE}.err" 2>/dev/null | tee -a "$LOG" || true
     rm -f "$OUTPUT_DIR/${domain}.md"
   fi
 }
