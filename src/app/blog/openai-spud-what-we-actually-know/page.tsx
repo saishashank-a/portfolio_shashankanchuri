@@ -38,7 +38,7 @@ export default function SpudPost() {
         </p>
 
         {/* Podcast player */}
-        <AudioPlayer src="/audio/openai-spud-podcast.m4a" />
+        <AudioPlayer src="https://xjpzs8c0ln0qbf81.public.blob.vercel-storage.com/openai-spud-podcast.m4a" />
 
         {/* Article body */}
         <div className="prose-blog">

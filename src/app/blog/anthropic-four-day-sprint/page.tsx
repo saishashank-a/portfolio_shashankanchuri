@@ -35,7 +35,7 @@ export default function AnthropicFourDaySprintPost() {
         </h1>
 
         {/* Podcast player */}
-        <AudioPlayer src="/audio/anthropic-four-day-sprint-podcast.m4a" />
+        <AudioPlayer src="https://xjpzs8c0ln0qbf81.public.blob.vercel-storage.com/anthropic-four-day-sprint-podcast.m4a" />
 
         {/* Article body */}
         <div className="prose-blog">

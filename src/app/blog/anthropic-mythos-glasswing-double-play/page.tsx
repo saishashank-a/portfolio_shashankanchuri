@@ -35,7 +35,7 @@ export default function AnthropicMythosPost() {
         </h1>
 
         {/* Podcast player */}
-        <AudioPlayer src="/audio/anthropic-mythos-podcast.m4a" />
+        <AudioPlayer src="https://xjpzs8c0ln0qbf81.public.blob.vercel-storage.com/anthropic-mythos-podcast.m4a" />
 
         {/* Article body */}
         <div className="prose-blog">
