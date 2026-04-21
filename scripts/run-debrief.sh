@@ -46,10 +46,14 @@ run_agent() {
       log "  ✓ [$domain] done in ${elapsed}s ($bytes bytes)"
     fi
   else
-    log "  ✗ [$domain] FAILED — see $LOG_DIR/${domain}-${DATE}.err"
+    log "  ✗ [$domain] FAILED — stderr:"
+    cat "$LOG_DIR/${domain}-${DATE}.err" | tee -a "$LOG" || true
     rm -f "$OUTPUT_DIR/${domain}.md"
   fi
 }
+
+log "Checking Claude auth..."
+claude --version 2>&1 | tee -a "$LOG" || true
 
 log "Launching 8 research agents in parallel..."
 run_agent "geopolitics" "$HAIKU"  &
