@@ -18,6 +18,38 @@ const posts = [
       'Pre-training finished March 24. Sam Altman says "a few weeks." Greg Brockman says "big model feel." Everything else is somebody\'s guess dressed up as a spec sheet.',
   },
   {
+    slug: 'anthropic-four-day-sprint',
+    date: 'Apr 2026',
+    tag: 'AI Strategy',
+    title: "Anthropic's Four-Day Sprint: What Actually Shipped in April 2026",
+    excerpt:
+      "Anthropic shipped a new flagship model, completed its Office integration, redesigned its desktop app, and reshaped its board — all in four days. An engineer's read.",
+  },
+  {
+    slug: 'anthropic-mythos-glasswing-double-play',
+    date: 'Apr 2026',
+    tag: 'AI Strategy',
+    title: "Capability × Capacity: Anthropic's Double Play That Defines the Next Phase of AI",
+    excerpt:
+      "On April 7, 2026, Anthropic launched Project Glasswing with Claude Mythos — a model too dangerous to release — and announced a multi-gigawatt compute deal. These aren't two stories. They're one equation.",
+  },
+  {
+    slug: 'openai-grew-up-sora-dies-razorpay-wins',
+    date: 'Apr 2026',
+    tag: 'AI Strategy',
+    title: 'The Week OpenAI Grew Up: Sora Dies, Razorpay Wins, and AI Finally Picks Revenue Over Demos',
+    excerpt:
+      'OpenAI was spending $15M/day on an app that made $2.1M lifetime. Then they killed it — and wired payments into Codex. These are the same decision viewed from two angles.',
+  },
+  {
+    slug: 'nvidia-ising-quantum-ai',
+    date: 'Apr 2026',
+    tag: 'AI Research',
+    title: 'AI Is Teaching Quantum Computers How to Grow Up',
+    excerpt:
+      "NVIDIA released Ising: the world's first open-source AI models built to make quantum computers work. Harvard, Cornell, IonQ, and Fermilab are already using them. Here's why every AI engineer should care.",
+  },
+  {
     slug: 'arm-agi-cpu-breaks-35-year-rule',
     date: 'Apr 2026',
     tag: 'AI Infrastructure',
