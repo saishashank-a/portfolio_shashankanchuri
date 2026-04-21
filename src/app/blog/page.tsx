@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'openai-spud-what-we-actually-know',
+    date: 'Apr 2026',
+    tag: 'AI Strategy',
+    title: "Spud: What We Actually Know About OpenAI's Next Model, and What's Speculation",
+    excerpt:
+      'Pre-training finished March 24. Sam Altman says "a few weeks." Greg Brockman says "big model feel." Everything else is somebody\'s guess dressed up as a spec sheet.',
+  },
+  {
     slug: 'arm-agi-cpu-breaks-35-year-rule',
     date: 'Apr 2026',
     tag: 'AI Infrastructure',
