@@ -66,14 +66,14 @@ export default function SpudPost() {
           <p>
             <strong>1. The codename is Spud.</strong> Internal placeholder, first reported by The
             Information. Whether it ships as GPT-5.5 or GPT-6 hasn&apos;t been decided publicly
-            &mdash; reportedly that depends on how significant the performance gap is relative to
+             -  reportedly that depends on how significant the performance gap is relative to
             GPT-5.4.
           </p>
 
           <p>
             <strong>2. Pre-training completed March 24, 2026.</strong> At OpenAI&apos;s Stargate
             data center in Abilene, Texas. Publicly confirmed by Sam Altman. OpenAI&apos;s typical
-            pre-training-to-release window is 3&ndash;6 weeks, which puts the highest-probability
+            pre-training-to-release window is 3-6 weeks, which puts the highest-probability
             launch window in May.
           </p>
 
@@ -89,7 +89,7 @@ export default function SpudPost() {
             <strong>4. Leadership language is unusually charged.</strong> Altman described Spud
             internally as &ldquo;a very strong model&rdquo; that could &ldquo;accelerate the
             economy.&rdquo; Brockman called it the product of &ldquo;two years of research&rdquo;
-            with a &ldquo;big model feel.&rdquo; These aren&apos;t specs &mdash; they&apos;re tells.
+            with a &ldquo;big model feel.&rdquo; These aren&apos;t specs  -  they&apos;re tells.
             OpenAI doesn&apos;t use &ldquo;big model feel&rdquo; for incremental updates.
           </p>
 
@@ -112,14 +112,14 @@ export default function SpudPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/openai-spud/mindmap.png"
-              alt="Mind map: Spud — branching structure tracing the confirmed facts, competitive context, and engineering implications of OpenAI's next model."
+              alt="Mind map: Spud  -  branching structure tracing the confirmed facts, competitive context, and engineering implications of OpenAI's next model."
               width={900}
               height={1200}
               className="rounded-sm w-full h-auto"
               priority
             />
             <figcaption>
-              The full knowledge map — confirmed facts, speculation, and competitive positioning.
+              The full knowledge map  -  confirmed facts, speculation, and competitive positioning.
               Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -131,13 +131,13 @@ export default function SpudPost() {
           <p>
             GPT-5.4, OpenAI&apos;s current flagship, launched March 5. Native computer use, a 1
             million token context window, 33% fewer hallucinations than GPT-5.2. It scores 57.7% on
-            SWE-bench Pro &mdash; credible, but not leading.
+            SWE-bench Pro  -  credible, but not leading.
           </p>
 
           <p>Then two things changed the shape of the field.</p>
 
           <p>
-            Google shipped Gemini 3.1 Pro on February 19. It scored 77.1% on ARC-AGI-2 &mdash;
+            Google shipped Gemini 3.1 Pro on February 19. It scored 77.1% on ARC-AGI-2  - 
             more than double Gemini 3 Pro. 80.6% on SWE-Bench Verified. 94.3% on GPQA Diamond. It
             leads 13 of 16 tracked benchmarks. At $2 per 1M input tokens and $12 per 1M output,
             it&apos;s 7.5&times; cheaper than Claude Opus 4.6 on input. For enterprises running
@@ -145,7 +145,7 @@ export default function SpudPost() {
           </p>
 
           <p>
-            Then Anthropic revealed Claude Mythos &mdash; a model that doesn&apos;t sit in the
+            Then Anthropic revealed Claude Mythos  -  a model that doesn&apos;t sit in the
             Opus/Sonnet/Haiku hierarchy. It sits above it. The coding and reasoning numbers are in
             the benchmark grid below, but the one that matters most structurally is
             Anthropic&apos;s internal fuzzing result: on ~7,000 entry points where Opus 4.6 managed
@@ -155,7 +155,7 @@ export default function SpudPost() {
           </p>
 
           <p>
-            On April 7, Anthropic announced Mythos would not be generally available &mdash; rolling
+            On April 7, Anthropic announced Mythos would not be generally available  -  rolling
             it out instead through Project Glasswing to nine partners: AWS, Apple, Cisco,
             CrowdStrike, Google, JPMorganChase, Microsoft, Nvidia, and Broadcom, restricted to
             defensive cybersecurity use cases.
@@ -188,7 +188,7 @@ export default function SpudPost() {
 
           <p>
             <strong>Persistent memory as the headline feature.</strong> Altman has pointed at it
-            publicly as the next major breakthrough &mdash; not the shallow &ldquo;remember my
+            publicly as the next major breakthrough  -  not the shallow &ldquo;remember my
             name&rdquo; layer that shipped last year, but cross-session state that survives between
             conversations. That kind of shift is what &ldquo;two years of research&rdquo; framing is
             written for.
@@ -226,7 +226,7 @@ export default function SpudPost() {
               <tbody>
                 <tr>
                   <td><strong>Spud / GPT-6</strong></td>
-                  <td>No &mdash; safety eval</td>
+                  <td>No  -  safety eval</td>
                   <td>Speculated 2M</td>
                   <td>Unknown</td>
                 </tr>
@@ -252,7 +252,7 @@ export default function SpudPost() {
                   <td><strong>GPT-5.4</strong></td>
                   <td>Yes</td>
                   <td>1M</td>
-                  <td>&mdash;</td>
+                  <td> - </td>
                 </tr>
               </tbody>
             </table>
@@ -290,7 +290,7 @@ export default function SpudPost() {
                 </tr>
                 <tr>
                   <td>SWE-bench Pro</td>
-                  <td>&mdash;</td>
+                  <td> - </td>
                   <td><strong>64.3%</strong></td>
                   <td>54.2%</td>
                   <td>57.7%</td>
@@ -311,24 +311,24 @@ export default function SpudPost() {
                 </tr>
                 <tr>
                   <td>ARC-AGI-2</td>
-                  <td>&mdash;</td>
-                  <td>&mdash;</td>
+                  <td> - </td>
+                  <td> - </td>
                   <td><strong>77.1%</strong></td>
-                  <td>&mdash;</td>
+                  <td> - </td>
                 </tr>
                 <tr>
                   <td>OSWorld</td>
                   <td><strong>79.6%</strong></td>
                   <td>78.0%</td>
-                  <td>&mdash;</td>
+                  <td> - </td>
                   <td>75.0%</td>
                 </tr>
                 <tr>
                   <td>Cybench</td>
                   <td><strong>100%</strong></td>
-                  <td>&mdash;</td>
-                  <td>&mdash;</td>
-                  <td>&mdash;</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td> - </td>
                 </tr>
               </tbody>
             </table>
@@ -342,8 +342,8 @@ export default function SpudPost() {
 
           <p>
             HLE has a tool-use story worth pulling out. GPT-5.4 leads Opus 4.7 without tools, but
-            Opus 4.7 takes it with tools. That gap &mdash; model capability versus
-            model-plus-scaffolding capability &mdash; is where real-world performance gets decided.
+            Opus 4.7 takes it with tools. That gap  -  model capability versus
+            model-plus-scaffolding capability  -  is where real-world performance gets decided.
           </p>
 
           <p>Spud is the missing column. When it ships, those blanks fill in.</p>
@@ -353,8 +353,8 @@ export default function SpudPost() {
           <h2>Google I/O on May 19 is the timing pressure point</h2>
 
           <p>
-            Google I/O 2026 runs May 19&ndash;20. Gemini 4 is widely speculated for reveal
-            &mdash; prediction markets put roughly a 15% probability on it shipping publicly before
+            Google I/O 2026 runs May 19-20. Gemini 4 is widely speculated for reveal
+             -  prediction markets put roughly a 15% probability on it shipping publicly before
             June 30. Google&apos;s pattern at I/O is to announce frontier models, not ship them.
             The most likely scenario: Gemini 4 announced May 19, staged rollout through Q2 and Q3.
           </p>
@@ -406,7 +406,7 @@ export default function SpudPost() {
           <p>
             This is the AWS answer to Stargate. OpenAI&apos;s Stargate is a $500B infrastructure
             bet with Microsoft and Oracle, running on Nvidia silicon. Anthropic is betting on
-            Amazon&apos;s custom chips &mdash; Trainium2, 3, and 4 &mdash; locked in through at
+            Amazon&apos;s custom chips  -  Trainium2, 3, and 4  -  locked in through at
             least 2035. Two different hardware philosophies. If Trainium3 delivers on the
             price-performance Amazon claims, Anthropic&apos;s marginal cost per token stays
             structurally lower than OpenAI&apos;s.
@@ -416,13 +416,13 @@ export default function SpudPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/openai-spud/infographic.png"
-              alt="Competitive landscape infographic: Spud vs. the field — benchmark grid, infrastructure bets, and the Google I/O timing window."
+              alt="Competitive landscape infographic: Spud vs. the field  -  benchmark grid, infrastructure bets, and the Google I/O timing window."
               width={1200}
               height={630}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              The full competitive picture &mdash; Spud as the missing column against Mythos, Opus
+              The full competitive picture  -  Spud as the missing column against Mythos, Opus
               4.7, and Gemini 3.1 Pro. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -440,8 +440,8 @@ export default function SpudPost() {
           <h3>Persistent memory is an architecture shift, not a feature</h3>
 
           <p>
-            If Spud ships with genuine long-term memory &mdash; actual persistent state across
-            conversations, not session-scoped layers &mdash; every RAG pipeline built in the last 18
+            If Spud ships with genuine long-term memory  -  actual persistent state across
+            conversations, not session-scoped layers  -  every RAG pipeline built in the last 18
             months gets less valuable overnight. The whole reason we pay the complexity tax on vector
             stores, chunking strategies, and re-ranking is because the model forgets. If the model
             stops forgetting, a significant chunk of the LangChain/LlamaIndex ecosystem becomes
@@ -452,7 +452,7 @@ export default function SpudPost() {
             The catch: persistent memory introduces its own failure modes. Stale context, identity
             confusion across users, prompt-injection attacks that survive across sessions instead of
             dying at the turn boundary. Day-one persistent memory will probably have the same
-            reliability profile as early function calling &mdash; impressive in demos, brittle in
+            reliability profile as early function calling  -  impressive in demos, brittle in
             production.
           </p>
 
@@ -468,15 +468,15 @@ export default function SpudPost() {
 
           <p>
             The test I&apos;ll run on day one: needle-in-a-haystack at 500K, 1M, and 1.5M tokens,
-            with the needle at the 40% mark &mdash; the hardest position. That number, not the max
+            with the needle at the 40% mark  -  the hardest position. That number, not the max
             window, tells you whether you can actually use the context.
           </p>
 
           <h3>The stealth testing signal</h3>
 
           <p>
-            If OpenAI is A/B-testing Spud outputs through GPT-5.4 Pro endpoints &mdash; and
-            multiple reports suggest they are &mdash; the model is already running at production
+            If OpenAI is A/B-testing Spud outputs through GPT-5.4 Pro endpoints  -  and
+            multiple reports suggest they are  -  the model is already running at production
             scale on real user traffic. That&apos;s further along than &ldquo;safety
             evaluation&rdquo; implies.
           </p>
@@ -489,10 +489,10 @@ export default function SpudPost() {
           <h3>What I&apos;d bet on</h3>
 
           <p>
-            Spud&apos;s coding capability beats Opus 4.7 on SWE-bench Verified by 2&ndash;4 points,
+            Spud&apos;s coding capability beats Opus 4.7 on SWE-bench Verified by 2-4 points,
             not 10+. Mythos is the outlier. Persistent memory ships, and it&apos;s broken enough
             that most serious developers won&apos;t trust it until v2. The super-app rollout is
-            staged &mdash; Codex + ChatGPT first, Atlas integration lagging. Launch pricing closes
+            staged  -  Codex + ChatGPT first, Atlas integration lagging. Launch pricing closes
             the gap with Gemini 3.1 Pro on output tokens, though matching Gemini outright requires
             TPU-level margins OpenAI doesn&apos;t have.
           </p>
@@ -511,7 +511,7 @@ export default function SpudPost() {
 
           <p>
             Stop building against specific model IDs. Hardcoded <code>gpt-5.4</code> or{' '}
-            <code>claude-opus-4-6</code> in config is a migration liability every 6&ndash;8 weeks at
+            <code>claude-opus-4-6</code> in config is a migration liability every 6-8 weeks at
             this cadence.
           </p>
 
@@ -557,8 +557,8 @@ export default function SpudPost() {
           </p>
 
           <p>
-            <strong>Google I/O, May 19&ndash;20.</strong> Gemini 4 announced, likely with staged
-            availability. Watch the live demos with unscripted inputs &mdash; those tell you whether
+            <strong>Google I/O, May 19-20.</strong> Gemini 4 announced, likely with staged
+            availability. Watch the live demos with unscripted inputs  -  those tell you whether
             benchmark numbers translate to real-world reliability.
           </p>
 

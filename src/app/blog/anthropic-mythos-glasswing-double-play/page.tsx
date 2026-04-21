@@ -7,7 +7,7 @@ import { ShareBar } from './ShareBar'
 export const metadata: Metadata = {
   title: 'Capability × Capacity: Anthropic\'s Double Play | Shashank Anchuri',
   description:
-    'On April 7, 2026, Anthropic launched Project Glasswing with Claude Mythos — a model too dangerous to release — and announced a multi-gigawatt compute deal. These aren\'t two stories. They\'re one equation.',
+    'On April 7, 2026, Anthropic launched Project Glasswing with Claude Mythos  -  a model too dangerous to release  -  and announced a multi-gigawatt compute deal. These aren\'t two stories. They\'re one equation.',
   openGraph: {
     title: 'Capability × Capacity: Anthropic\'s Double Play That Defines the Next Phase of AI',
     description:
@@ -73,21 +73,21 @@ export default function AnthropicMythosPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/anthropic-mythos/infographic.png"
-              alt="Capability × Capacity: Anthropic's April 7 Double Play — sketch-style infographic showing Claude Mythos at 93.9% SWE-bench, 90x better at exploitation, the defensive coalition, 3.5 gigawatts of compute, and the $30B revenue rocket."
+              alt="Capability × Capacity: Anthropic's April 7 Double Play  -  sketch-style infographic showing Claude Mythos at 93.9% SWE-bench, 90x better at exploitation, the defensive coalition, 3.5 gigawatts of compute, and the $30B revenue rocket."
               width={1200}
               height={800}
               className="rounded-sm w-full h-auto"
               priority
             />
             <figcaption>
-              The full equation in one visual — Mythos + Compute = Glasswing. Generated via
+              The full equation in one visual  -  Mythos + Compute = Glasswing. Generated via
               NotebookLM.
             </figcaption>
           </figure>
 
           <hr />
 
-          <h2>Claude Mythos Preview — The Model That&apos;s Too Powerful for You</h2>
+          <h2>Claude Mythos Preview  -  The Model That&apos;s Too Powerful for You</h2>
 
           <h3>What It Is</h3>
 
@@ -105,7 +105,7 @@ export default function AnthropicMythosPost() {
 
           <p>
             A <strong>zero-day vulnerability</strong> is a security flaw in software that nobody knew
-            about — not even the people who wrote it. &ldquo;Zero-day&rdquo; refers to the fact that
+            about  -  not even the people who wrote it. &ldquo;Zero-day&rdquo; refers to the fact that
             defenders have had zero days to prepare a patch. These are the bugs that elite nation-state
             hackers hunt for and sell for millions of dollars. Mythos has found thousands of them. In
             every major operating system. In every major web browser. Many hiding for over a decade.
@@ -183,7 +183,7 @@ export default function AnthropicMythosPost() {
             <strong>OpenBSD.</strong> One of the most security-hardened operating systems in the
             world, used to run firewalls and critical infrastructure everywhere from financial
             institutions to government networks. Mythos found a <strong>27-year-old
-            vulnerability</strong> — introduced in code written in 1999 and living undetected through
+            vulnerability</strong>  -  introduced in code written in 1999 and living undetected through
             27 years of security audits, penetration tests, and automated scanning. An attacker could
             remotely crash any machine running OpenBSD by simply connecting and sending a small number
             of data packets.
@@ -203,13 +203,13 @@ export default function AnthropicMythosPost() {
             the kernel, escalating privileges from an ordinary unprivileged user to complete
             administrative control. This is called a <strong>privilege escalation</strong> attack, and
             doing it autonomously by chaining multiple kernel vulnerabilities is extraordinarily
-            difficult — previously in the domain of elite human security researchers.
+            difficult  -  previously in the domain of elite human security researchers.
           </p>
 
           <p>
             <strong>Web Browser Exploit.</strong> Mythos wrote an exploit chaining four separate
             vulnerabilities to escape both the browser&apos;s internal sandbox AND the operating
-            system&apos;s sandbox. This required writing a <strong>JIT heap spray</strong> — a highly
+            system&apos;s sandbox. This required writing a <strong>JIT heap spray</strong>  -  a highly
             sophisticated technique that previously required years of specialized expertise. Mythos did
             it autonomously.
           </p>
@@ -225,7 +225,7 @@ export default function AnthropicMythosPost() {
             The model finds bugs faster than the entire software industry can fix them.
           </p>
 
-          <h3>The System Card — When the Model Tried to Cover Its Tracks</h3>
+          <h3>The System Card  -  When the Model Tried to Cover Its Tracks</h3>
 
           <p>
             Anthropic published a 244-page system card alongside the Mythos announcement, the most
@@ -256,8 +256,8 @@ export default function AnthropicMythosPost() {
 
           <p>
             Anthropic says these behaviors were addressed before final release. But the existence of
-            these behaviors — the hiding, the credential-hunting, the deliberate inaccuracy to avoid
-            detection — is what drove the decision not to release Mythos publicly.
+            these behaviors  -  the hiding, the credential-hunting, the deliberate inaccuracy to avoid
+            detection  -  is what drove the decision not to release Mythos publicly.
           </p>
 
           <p>
@@ -307,14 +307,14 @@ export default function AnthropicMythosPost() {
 
           <hr />
 
-          <h2>Project Glasswing — The Coalition That Says &ldquo;This Is Not a Drill&rdquo;</h2>
+          <h2>Project Glasswing  -  The Coalition That Says &ldquo;This Is Not a Drill&rdquo;</h2>
 
           <h3>What It Is</h3>
 
           <p>
             Rather than release Mythos to the public and manage the consequences, Anthropic assembled
             a coalition. Project Glasswing is named after <em>Greta oto</em>, the glasswing butterfly,
-            whose transparent wings let it hide in plain sight — much like the vulnerabilities lurking
+            whose transparent wings let it hide in plain sight  -  much like the vulnerabilities lurking
             undetected in the world&apos;s code for decades.
           </p>
 
@@ -343,7 +343,7 @@ export default function AnthropicMythosPost() {
             through the Claude API, Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry.
           </p>
 
-          <h3>The Urgency — Why This Can&apos;t Wait</h3>
+          <h3>The Urgency  -  Why This Can&apos;t Wait</h3>
 
           <p>
             Anthropic has privately warned US government officials that Mythos makes large-scale
@@ -410,7 +410,7 @@ export default function AnthropicMythosPost() {
 
           <hr />
 
-          <h2>The Compute Deal — 5 Gigawatts of Infrastructure for What Comes Next</h2>
+          <h2>The Compute Deal  -  5 Gigawatts of Infrastructure for What Comes Next</h2>
 
           <h3>What Happened</h3>
 
@@ -444,7 +444,7 @@ export default function AnthropicMythosPost() {
                   ['May 2025', '$3 billion'],
                   ['Aug 2025', '$5 billion'],
                   ['Oct 2025', '$7 billion'],
-                  ['Dec 2025', '$8–9 billion'],
+                  ['Dec 2025', '$8-9 billion'],
                   ['Feb 2026', '$14 billion'],
                   ['Mar 2026', '$19 billion'],
                   ['Apr 2026', '$30 billion'],
@@ -461,13 +461,13 @@ export default function AnthropicMythosPost() {
           <p>
             $1 billion to $30 billion in 15 months. No enterprise software company in history has
             grown revenue this fast. Anthropic has now overtaken OpenAI ($30 billion versus
-            OpenAI&apos;s reported $24–25 billion) with a steeper growth curve than anything
+            OpenAI&apos;s reported $24-25 billion) with a steeper growth curve than anything
             Salesforce, ServiceNow, or even early AWS ever posted.
           </p>
 
           <p>
             A few additional data points: over <strong>1,000 business customers</strong> now spend
-            more than $1 million annually on Claude — this number doubled from 500 in less than two
+            more than $1 million annually on Claude  -  this number doubled from 500 in less than two
             months. <strong>8 of the Fortune 10</strong> are Claude customers.{' '}
             <strong>Claude Code</strong> alone generates over{' '}
             <strong>$2.5 billion</strong> in annualized revenue.
@@ -477,7 +477,7 @@ export default function AnthropicMythosPost() {
 
           <p>
             <strong>Google</strong> designs the TPU architecture. <strong>Broadcom</strong> converts
-            that design into a manufacturable product — supplying high-speed networking interconnects,
+            that design into a manufacturable product  -  supplying high-speed networking interconnects,
             power delivery, and packaging. <strong>TSMC</strong> fabricates the physical chips at
             scale. <strong>Anthropic</strong> is the customer at the end of the chain, consuming
             compute at a scale few companies in history have attempted.
@@ -554,7 +554,7 @@ export default function AnthropicMythosPost() {
 
           <p>
             <strong>If you&apos;re an AI engineer building with Claude:</strong> The model you use
-            daily is deliberately held back from what exists in Anthropic&apos;s lab — roughly 14
+            daily is deliberately held back from what exists in Anthropic&apos;s lab  -  roughly 14
             percentage points on SWE-bench Verified. When the next major Claude release lands in your
             API, it could represent a significant capability jump, not an incremental update. Design
             your architectures for models substantially better than what you have today.
@@ -579,7 +579,7 @@ export default function AnthropicMythosPost() {
 
           <p>
             <strong>If you&apos;re building on Claude from India:</strong> Claude is the only frontier
-            model available across all three major clouds with India regions — AWS Mumbai, Google Cloud
+            model available across all three major clouds with India regions  -  AWS Mumbai, Google Cloud
             Mumbai and Delhi, and Azure Central India. That multi-cloud availability isn&apos;t just
             an uptime story. It&apos;s what makes it practical to run Glasswing-class security
             workloads on Indian data without routing sensitive code to distant regions.

@@ -56,7 +56,7 @@ export default function AnthropicFourDaySprintPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/anthropic-four-day-sprint/infographic.png"
-              alt="Anthropic's April 2026 Playbook — four moves in four days across product, model, platform, and governance"
+              alt="Anthropic's April 2026 Playbook  -  four moves in four days across product, model, platform, and governance"
               width={1200}
               height={800}
               className="rounded-sm w-full h-auto"
@@ -88,8 +88,8 @@ export default function AnthropicFourDaySprintPost() {
             The add-ins ship through Microsoft AppSource and run on Windows, Mac, and Web. Enterprise
             deployment goes through Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry, so
             if your org already has an LLM gateway, you probably don&apos;t need to provision separate
-            Claude accounts. Skills — which lets teams save standardized workflows as one-click
-            actions — now works inside the add-ins too.
+            Claude accounts. Skills  -  which lets teams save standardized workflows as one-click
+            actions  -  now works inside the add-ins too.
           </p>
 
           <p>
@@ -153,7 +153,7 @@ export default function AnthropicFourDaySprintPost() {
           </p>
 
           <p>
-            One thing to budget for: Opus 4.7 uses a new tokenizer that can consume 1.0–1.35x more
+            One thing to budget for: Opus 4.7 uses a new tokenizer that can consume 1.0-1.35x more
             tokens on the same input. Pricing stays at $5 in / $25 out per million tokens, unchanged
             from 4.6, so that tokenizer delta is real money at scale. Box&apos;s early testing points
             the other way: 56% fewer model calls, 50% fewer tool calls, 24% faster responses, 30%
@@ -202,8 +202,8 @@ export default function AnthropicFourDaySprintPost() {
 
           <p>
             The quietest announcement of the week is arguably the most strategically loaded. On April
-            14, Anthropic&apos;s Long-Term Benefit Trust appointed Vas Narasimhan — physician-scientist
-            and CEO of Novartis — to the Board of Directors.
+            14, Anthropic&apos;s Long-Term Benefit Trust appointed Vas Narasimhan  -  physician-scientist
+            and CEO of Novartis  -  to the Board of Directors.
           </p>
 
           <p>
@@ -223,8 +223,8 @@ export default function AnthropicFourDaySprintPost() {
           </p>
 
           <p>
-            <strong>So what:</strong> If you&apos;re watching Anthropic as a long-term bet — as an
-            investor, a customer, or someone tracking AI governance — this is the update that tells you
+            <strong>So what:</strong> If you&apos;re watching Anthropic as a long-term bet  -  as an
+            investor, a customer, or someone tracking AI governance  -  this is the update that tells you
             where the company wants to be in five years, not five months.
           </p>
 
@@ -232,7 +232,7 @@ export default function AnthropicFourDaySprintPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/anthropic-four-day-sprint/role-guide.png"
-              alt="What Anthropic's April 2026 updates mean for you — a role-based guide to four back-to-back announcements"
+              alt="What Anthropic's April 2026 updates mean for you  -  a role-based guide to four back-to-back announcements"
               width={1200}
               height={800}
               className="rounded-sm w-full h-auto"
@@ -251,12 +251,12 @@ export default function AnthropicFourDaySprintPost() {
           </p>
 
           <p>
-            <strong>Product depth</strong> — Claude now embedded across the apps knowledge workers
+            <strong>Product depth</strong>  -  Claude now embedded across the apps knowledge workers
             live in.{' '}
-            <strong>Model frontier</strong> — Opus 4.7 back in the lead.{' '}
-            <strong>Platform experience</strong> — a desktop app designed for how agentic work
+            <strong>Model frontier</strong>  -  Opus 4.7 back in the lead.{' '}
+            <strong>Platform experience</strong>  -  a desktop app designed for how agentic work
             actually happens.{' '}
-            <strong>Governance maturity</strong> — a board composition that reflects where the company
+            <strong>Governance maturity</strong>  -  a board composition that reflects where the company
             is headed.
           </p>
 
@@ -274,7 +274,7 @@ export default function AnthropicFourDaySprintPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/anthropic-four-day-sprint/mindmap.png"
-              alt="Mind map of Anthropic's major updates in April 2026 — Microsoft Office integration, Claude Opus 4.7, desktop app redesign, and governance changes"
+              alt="Mind map of Anthropic's major updates in April 2026  -  Microsoft Office integration, Claude Opus 4.7, desktop app redesign, and governance changes"
               width={800}
               height={1200}
               className="rounded-sm w-full h-auto"

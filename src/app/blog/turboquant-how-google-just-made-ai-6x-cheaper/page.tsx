@@ -48,16 +48,16 @@ export default function TurboQuantPost() {
           </p>
 
           <p>
-            As context windows stretch to 128K, 256K, even 1M tokens, the key-value (KV) cache —
+            As context windows stretch to 128K, 256K, even 1M tokens, the key-value (KV) cache  - 
             the scratchpad an LLM fills with intermediate calculations so it doesn't reprocess
-            everything from scratch — balloons into gigabytes of GPU memory per session. That's the
+            everything from scratch  -  balloons into gigabytes of GPU memory per session. That's the
             actual cost driver. And until now, nobody had a clean solution.
           </p>
 
           <p>
             Traditional quantization methods try to compress this cache, but they carry a hidden
             tax: scaling factors, normalization constants, codebook entries, all stored in full
-            precision. The overhead eats 1–2 bits per number back. It's like switching to a smaller
+            precision. The overhead eats 1-2 bits per number back. It's like switching to a smaller
             suitcase but needing a second bag just for the packing cubes.
           </p>
 
@@ -120,7 +120,7 @@ export default function TurboQuantPost() {
               priority
             />
             <figcaption>
-              Full-pipeline visual walkthrough — from KV cache bottleneck through PolarQuant and
+              Full-pipeline visual walkthrough  -  from KV cache bottleneck through PolarQuant and
               QJL to the bold result numbers (3-bit, 5-6x, 8x). Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -140,7 +140,7 @@ export default function TurboQuantPost() {
               <strong>3-bit KV cache compression</strong> with zero accuracy loss
             </li>
             <li>
-              <strong>5–6x reduction</strong> in KV cache memory footprint
+              <strong>5-6x reduction</strong> in KV cache memory footprint
             </li>
             <li>
               <strong>Up to 8x speedup</strong> on H100 GPUs for attention logit computation
@@ -161,7 +161,7 @@ export default function TurboQuantPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/turboquant/comic.png"
-              alt="A Developer Reads Google's TurboQuant Paper: A Journey in 6 Panels — stick-figure comic showing the arc from GPU memory pain to 3-bit zero-accuracy-loss breakthrough."
+              alt="A Developer Reads Google's TurboQuant Paper: A Journey in 6 Panels  -  stick-figure comic showing the arc from GPU memory pain to 3-bit zero-accuracy-loss breakthrough."
               width={800}
               height={500}
               className="rounded-sm w-full h-auto"
@@ -209,21 +209,21 @@ export default function TurboQuantPost() {
           <p>
             <strong>RAG pipeline builders:</strong> The most common RAG failure isn't retrieval;
             it's context window saturation. You retrieve 20 relevant chunks, but only 5 fit into
-            generation context. A 5–6x KV cache compression shifts that ceiling dramatically.
+            generation context. A 5-6x KV cache compression shifts that ceiling dramatically.
             Smaller embedding indices, longer retrievable context in generation, better answers at
             lower cost.
           </p>
 
           <p>
             <strong>LLM inference at scale:</strong> KV cache is the primary bottleneck for
-            concurrent users on a shared GPU. Compress it by 5–6x and you serve 5–6x more users per
+            concurrent users on a shared GPU. Compress it by 5-6x and you serve 5-6x more users per
             H100, or cut your compute bill by the same factor. For anyone paying for cloud GPU time,
             this is a direct line to profitability.
           </p>
 
           <p>
-            <strong>On-device and edge AI:</strong> Models that currently need 16–24GB VRAM could
-            realistically run on 4–8GB devices when the KV cache isn't eating memory. 7B parameter
+            <strong>On-device and edge AI:</strong> Models that currently need 16-24GB VRAM could
+            realistically run on 4-8GB devices when the KV cache isn't eating memory. 7B parameter
             models on laptops and phones stop being hypothetical.
           </p>
 
@@ -243,13 +243,13 @@ export default function TurboQuantPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/turboquant/mindmap.png"
-              alt="Mind map of TurboQuant's architecture, benefits, and applications — showing core concept, two-stage pipeline, key benefits, and use cases."
+              alt="Mind map of TurboQuant's architecture, benefits, and applications  -  showing core concept, two-stage pipeline, key benefits, and use cases."
               width={800}
               height={600}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              Mind map of TurboQuant's full architecture — core concept, two-stage pipeline
+              Mind map of TurboQuant's full architecture  -  core concept, two-stage pipeline
               (PolarQuant + QJL), key benefits, and applications. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -274,7 +274,7 @@ export default function TurboQuantPost() {
 
           <p>
             The race in AI right now isn't just about bigger models. It's about making inference
-            cheaper, faster, and more accessible — on more devices, at more price points. TurboQuant
+            cheaper, faster, and more accessible  -  on more devices, at more price points. TurboQuant
             gives that goal a concrete address.
           </p>
 

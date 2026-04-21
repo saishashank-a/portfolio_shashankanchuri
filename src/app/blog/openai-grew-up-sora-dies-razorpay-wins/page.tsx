@@ -7,11 +7,11 @@ import { ShareBar } from './ShareBar'
 export const metadata: Metadata = {
   title: 'The Week OpenAI Grew Up: Sora Dies, Razorpay Wins | Shashank Anchuri',
   description:
-    'OpenAI was spending $15M/day on an app that made $2.1M lifetime. Then they killed it — and wired payments into Codex. These are the same decision viewed from two angles.',
+    'OpenAI was spending $15M/day on an app that made $2.1M lifetime. Then they killed it  -  and wired payments into Codex. These are the same decision viewed from two angles.',
   openGraph: {
     title: 'The Week OpenAI Grew Up: Sora Dies, Razorpay Wins',
     description:
-      'OpenAI was spending $15M/day on an app that made $2.1M lifetime. Then they killed it — and wired payments into Codex.',
+      'OpenAI was spending $15M/day on an app that made $2.1M lifetime. Then they killed it  -  and wired payments into Codex.',
     images: [{ url: '/images/blog/openai-grew-up/infographic-sora.png' }],
   },
 }
@@ -56,8 +56,8 @@ export default function OpenAIGrewUpPost() {
 
           <p>
             Between March 24 and April 6, 2026, OpenAI executed the clearest strategic pivot the AI
-            industry has seen. The era of viral consumer apps — the flashy demos, the Disney deals,
-            the &ldquo;ChatGPT for creativity&rdquo; announcements — just ended. The era of
+            industry has seen. The era of viral consumer apps  -  the flashy demos, the Disney deals,
+            the &ldquo;ChatGPT for creativity&rdquo; announcements  -  just ended. The era of
             revenue-generating infrastructure just started. Compute that was burning on Sora is now
             flowing to Codex. The Razorpay partnership only matters because Sora died first.
           </p>
@@ -66,14 +66,14 @@ export default function OpenAIGrewUpPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/openai-grew-up/mindmap.png"
-              alt="Mind map: The Week OpenAI Grew Up — branching structure tracing Sora and Razorpay events back to one strategic root: compute is a zero-sum game and demos don't generate revenue."
+              alt="Mind map: The Week OpenAI Grew Up  -  branching structure tracing Sora and Razorpay events back to one strategic root: compute is a zero-sum game and demos don't generate revenue."
               width={900}
               height={1200}
               className="rounded-sm w-full h-auto"
               priority
             />
             <figcaption>
-              The full map of how these pieces connect — two pivot decisions sharing one root.
+              The full map of how these pieces connect  -  two pivot decisions sharing one root.
               Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -130,7 +130,7 @@ export default function OpenAIGrewUpPost() {
 
           <p>
             Monthly downloads crashed from 3.3 million in November 2025 to 1.1 million by February
-            2026 — a 66% decline in three months. Active users peaked around one million and fell
+            2026  -  a 66% decline in three months. Active users peaked around one million and fell
             below 500,000.
           </p>
 
@@ -138,13 +138,13 @@ export default function OpenAIGrewUpPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/openai-grew-up/infographic-sora.png"
-              alt="The Sora Autopsy: How a $5.4B 'Science Project' Died in 176 Days — timeline from Feb 2024 unveil to Mar 2026 shutdown, showing the tilted cost/revenue scale and Anthropic comparison."
+              alt="The Sora Autopsy: How a $5.4B 'Science Project' Died in 176 Days  -  timeline from Feb 2024 unveil to Mar 2026 shutdown, showing the tilted cost/revenue scale and Anthropic comparison."
               width={1200}
               height={630}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              The full post-mortem in one visual — from the cost horror show to the Anthropic
+              The full post-mortem in one visual  -  from the cost horror show to the Anthropic
               wake-up call that triggered the shutdown. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -224,7 +224,7 @@ export default function OpenAIGrewUpPost() {
           <h3>What Actually Happened</h3>
 
           <p>
-            On April 6, 2026 — twelve days after Sora went dark — Razorpay partnered with OpenAI to
+            On April 6, 2026  -  twelve days after Sora went dark  -  Razorpay partnered with OpenAI to
             integrate payments directly into Codex, OpenAI&apos;s AI-powered coding platform used by
             over one million developers every week.
           </p>
@@ -246,7 +246,7 @@ export default function OpenAIGrewUpPost() {
 
           <p>
             MCP stands for Model Context Protocol. Think of it as a universal power adapter for AI
-            — the kind you take on international trips to plug any device into any outlet anywhere.
+             -  the kind you take on international trips to plug any device into any outlet anywhere.
             Before MCP, connecting an AI system to an external service required writing custom
             integration code every single time. MCP standardizes all of that. One protocol, any
             service.
@@ -289,13 +289,13 @@ export default function OpenAIGrewUpPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/openai-grew-up/infographic-razorpay.png"
-              alt="The Prompt-to-Payment Pipeline: How AI Is Collapsing the Startup Timeline — 2023 traditional build (6-14 weeks) vs 2026 AI pipeline (under 5 minutes), three-phase strategy, and India's structural lead."
+              alt="The Prompt-to-Payment Pipeline: How AI Is Collapsing the Startup Timeline  -  2023 traditional build (6-14 weeks) vs 2026 AI pipeline (under 5 minutes), three-phase strategy, and India's structural lead."
               width={1200}
               height={630}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              The collapse from six-week builds to five-minute prompts — and the three-phase
+              The collapse from six-week builds to five-minute prompts  -  and the three-phase
               progression from October 2025 to April 2026. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -303,7 +303,7 @@ export default function OpenAIGrewUpPost() {
           <h3>Why India Is Ahead of the West on This</h3>
 
           <p>
-            India processes over <strong>20 billion UPI transactions monthly</strong> — the
+            India processes over <strong>20 billion UPI transactions monthly</strong>  -  the
             world&apos;s largest real-time payment network, built on open infrastructure, with NPCI
             actively collaborating with AI platforms rather than treating them as threats.
           </p>

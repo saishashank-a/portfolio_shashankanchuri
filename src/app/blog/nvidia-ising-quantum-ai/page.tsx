@@ -60,7 +60,7 @@ export default function NvidiaIsingPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/nvidia-ising/mindmap.png"
-              alt="Mind map: AI and Quantum Computing — NVIDIA Ising AI Models, The Quantum Challenge, Quantum vs Classical, NVIDIA Infrastructure Stack, Future Outlook"
+              alt="Mind map: AI and Quantum Computing  -  NVIDIA Ising AI Models, The Quantum Challenge, Quantum vs Classical, NVIDIA Infrastructure Stack, Future Outlook"
               width={800}
               height={500}
               className="rounded-sm w-full h-auto"
@@ -75,8 +75,8 @@ export default function NvidiaIsingPost() {
 
           <p>
             The physicist Richard Feynman had a deceptively simple idea back in 1982: if you want to
-            simulate how the natural world actually works — how molecules fold, how drugs bind to
-            proteins, how new materials behave — you need a computer that runs on the same physics as
+            simulate how the natural world actually works  -  how molecules fold, how drugs bind to
+            proteins, how new materials behave  -  you need a computer that runs on the same physics as
             nature itself.
           </p>
 
@@ -130,7 +130,7 @@ export default function NvidiaIsingPost() {
           <p>
             The error rates tell the real story. Current quantum processors fail roughly once every{' '}
             <strong>1,000 operations</strong>. Useful quantum computing needs failure rates closer to
-            one in a <strong>trillion</strong>. That gap — six orders of magnitude — is the chasm the
+            one in a <strong>trillion</strong>. That gap  -  six orders of magnitude  -  is the chasm the
             entire field has been trying to bridge for thirty years.
           </p>
 
@@ -144,7 +144,7 @@ export default function NvidiaIsingPost() {
 
           <p>
             But here&apos;s the catch nobody talks about enough. Error correction requires a fast
-            classical computer — a <strong>decoder</strong> — running alongside the quantum processor,
+            classical computer  -  a <strong>decoder</strong>  -  running alongside the quantum processor,
             processing massive error signals in real time. We&apos;re talking terabytes of data per
             second, with correction decisions needed in microseconds. As quantum systems scale from 100
             qubits to thousands to eventually millions, the decoding workload grows exponentially.
@@ -163,13 +163,13 @@ export default function NvidiaIsingPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/nvidia-ising/infographic-stack.png"
-              alt="AI Is the Operating System of Quantum Machines — infographic showing The Problem (six-order reliability chasm, decoherence) and The Solutions (Ising Calibration 35B VLM, Ising Decoding 3D CNN), plus the Hybrid Quantum-GPU Stack with NVQLink and market growth to $11B by 2030"
+              alt="AI Is the Operating System of Quantum Machines  -  infographic showing The Problem (six-order reliability chasm, decoherence) and The Solutions (Ising Calibration 35B VLM, Ising Decoding 3D CNN), plus the Hybrid Quantum-GPU Stack with NVQLink and market growth to $11B by 2030"
               width={1200}
               height={700}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              The full Hybrid Quantum-GPU stack — QPU, NVQLink, GPU supercomputer, and Ising models
+              The full Hybrid Quantum-GPU stack  -  QPU, NVQLink, GPU supercomputer, and Ising models
               bridging the gap. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -187,7 +187,7 @@ export default function NvidiaIsingPost() {
 
           <p>
             <strong>Ising Calibration</strong> is a <strong>35-billion parameter</strong>{' '}
-            vision-language model — the same architecture family behind image-understanding AI —
+            vision-language model  -  the same architecture family behind image-understanding AI  - 
             fine-tuned to interpret measurements from quantum processors and automatically adjust the
             physical control signals (microwaves, lasers, electromagnetic pulses) that manipulate
             qubits.
@@ -203,8 +203,8 @@ export default function NvidiaIsingPost() {
           </p>
 
           <p>
-            On NVIDIA&apos;s new <strong>QCalEval benchmark</strong> — the first standardized test for
-            quantum calibration AI — it outperformed Gemini, Claude, and GPT models.
+            On NVIDIA&apos;s new <strong>QCalEval benchmark</strong>  -  the first standardized test for
+            quantum calibration AI  -  it outperformed Gemini, Claude, and GPT models.
           </p>
 
           <h3>Ising Decoding</h3>
@@ -299,7 +299,7 @@ export default function NvidiaIsingPost() {
           <h2>Why AI Engineers Should Care</h2>
 
           <p>
-            I build AI systems for a living — LLMs, RAG pipelines, agentic workflows. Here&apos;s why
+            I build AI systems for a living  -  LLMs, RAG pipelines, agentic workflows. Here&apos;s why
             I&apos;m paying attention to this.
           </p>
 
@@ -332,7 +332,7 @@ export default function NvidiaIsingPost() {
 
           <p>
             Fault-tolerant quantum computers capable of solving commercially relevant problems are still
-            years away. The 2026–2029 window is when things get decisive. Google is targeting fault
+            years away. The 2026-2029 window is when things get decisive. Google is targeting fault
             tolerance by the end of the decade, IBM is racing toward 200 logical qubits, and a dozen
             other players are pushing hard from different angles.
           </p>
@@ -349,13 +349,13 @@ export default function NvidiaIsingPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/nvidia-ising/infographic-timeline.png"
-              alt="Quantum Computing's Journey — Where AI Changes Everything: timeline from Wright Brothers era (1982-2019) through Breaking the Error Threshold (2024-2025) to April 2026 NVIDIA Ising Launch, through 2026-2029 Fault-Tolerant Race, to 2030+ Hybrid Supercomputer Era. $11B+ market projection."
+              alt="Quantum Computing's Journey  -  Where AI Changes Everything: timeline from Wright Brothers era (1982-2019) through Breaking the Error Threshold (2024-2025) to April 2026 NVIDIA Ising Launch, through 2026-2029 Fault-Tolerant Race, to 2030+ Hybrid Supercomputer Era. $11B+ market projection."
               width={1200}
               height={675}
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              From Feynman&apos;s proposal to the hybrid supercomputer era — quantum&apos;s arc in one
+              From Feynman&apos;s proposal to the hybrid supercomputer era  -  quantum&apos;s arc in one
               visual. Generated via NotebookLM.
             </figcaption>
           </figure>

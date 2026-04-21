@@ -86,8 +86,8 @@ export default function ArmAGICPUPost() {
 
           <p>
             Arm Holdings, based in Cambridge, England and majority-owned by SoftBank, has run one of
-            the cleanest business models in tech. They design chip architectures — the fundamental
-            instruction sets and blueprints that tell a processor how to think — and license those
+            the cleanest business models in tech. They design chip architectures  -  the fundamental
+            instruction sets and blueprints that tell a processor how to think  -  and license those
             designs to companies that actually manufacture the chips. Arm collects royalties on every
             chip shipped. Over 30 billion Arm-based chips shipped in 2024 alone.
           </p>
@@ -134,7 +134,7 @@ export default function ArmAGICPUPost() {
           <p>That era is ending. And the reason is the shift from chatbots to agents.</p>
 
           <p>
-            <strong>The chatbot era</strong> (roughly 2023–2025) had a simple loop: user sends
+            <strong>The chatbot era</strong> (roughly 2023-2025) had a simple loop: user sends
             prompt, GPU runs inference, response comes back. One shot. The GPU does the heavy
             lifting. The CPU barely breaks a sweat.
           </p>
@@ -178,7 +178,7 @@ export default function ArmAGICPUPost() {
           <p>
             The demand numbers confirm this. Arm CEO Rene Haas stated that today&apos;s AI data
             centers use roughly 30 million CPU cores per gigawatt of power capacity. For agentic AI,
-            that needs to grow to 120 million — a 4x increase. Bloomberg Intelligence projects the
+            that needs to grow to 120 million  -  a 4x increase. Bloomberg Intelligence projects the
             inference market will surpass the training market by 2029.
           </p>
 
@@ -216,7 +216,7 @@ export default function ArmAGICPUPost() {
             Arm&apos;s claim: more than 2x performance per rack versus the latest x86 platforms,
             translating to up to $10 billion in CAPEX savings per gigawatt of data center capacity.
             Independent benchmarks haven&apos;t been published yet. But when Meta is building
-            gigawatt-scale data centers with a $115–135 billion 2026 capex budget, efficiency
+            gigawatt-scale data centers with a $115-135 billion 2026 capex budget, efficiency
             isn&apos;t a nice-to-have. It&apos;s the binding constraint. Meta&apos;s head of
             infrastructure, Santosh Janardhan, put it plainly at launch:{' '}
             <strong>&ldquo;Wattage is a very scarce resource.&rdquo;</strong>
@@ -280,7 +280,7 @@ export default function ArmAGICPUPost() {
           <figure className="my-8">
             <Image
               src="/images/blog/arm-agi-cpu/mindmap.png"
-              alt="Mind map of the Arm AGI CPU — market launch, technical specs, agentic AI shift, competitive landscape, and ecosystem partnerships."
+              alt="Mind map of the Arm AGI CPU  -  market launch, technical specs, agentic AI shift, competitive landscape, and ecosystem partnerships."
               width={800}
               height={1200}
               className="rounded-sm w-full h-auto"
@@ -307,7 +307,7 @@ export default function ArmAGICPUPost() {
 
           <p>
             <strong>Your orchestration framework runs on CPUs.</strong> LangChain, CrewAI, AutoGen,
-            LlamaIndex, whatever you&apos;ve built internally — its efficiency directly determines
+            LlamaIndex, whatever you&apos;ve built internally  -  its efficiency directly determines
             GPU utilization. A slow orchestration layer doesn&apos;t just add latency; it means your
             $30,000 GPUs wait around doing nothing between inference calls. Optimizing that layer is
             now as important as optimizing your model.
