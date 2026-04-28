@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'india-ai-funding-surge-q1-2026',
+    date: 'Apr 2026',
+    tag: 'AI Strategy',
+    title: "India's AI Funding Surge: The Numbers Are Big, the Policy Change Is Bigger",
+    excerpt:
+      'Indian AI startups raised ₹2,110 crore in Q1 2026 — a 73% YoY surge. AI took 38% of all startup capital. The new DPIIT deep tech framework just doubled the runway. Here is what shifts.',
+  },
+  {
     slug: 'openai-spud-what-we-actually-know',
     date: 'Apr 2026',
     tag: 'AI Strategy',

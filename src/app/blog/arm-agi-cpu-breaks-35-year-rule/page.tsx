@@ -35,7 +35,7 @@ export default function ArmAGICPUPost() {
         </h1>
 
         {/* Podcast player */}
-        <AudioPlayer src="/audio/arm-agi-cpu-podcast.m4a" title="Arm just broke a 35-year rule and it matters more than you think" />
+        <AudioPlayer src="https://xjpzs8c0ln0qbf81.public.blob.vercel-storage.com/arm-agi-cpu-podcast.m4a" title="Arm just broke a 35-year rule and it matters more than you think" />
 
         {/* Article body */}
         <div className="prose-blog">
