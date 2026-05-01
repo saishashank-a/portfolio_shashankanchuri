@@ -7,13 +7,18 @@ on:
     # 6:00 AM IST = 00:30 UTC  — send email
     - cron: '30 0 * * *'
   workflow_dispatch:
+    inputs:
+      email_only:
+        description: 'Skip research, send email from committed debrief.json'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
   research-and-deploy:
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
+    if: github.event.schedule == '0 0 * * *' || (github.event_name == 'workflow_dispatch' && inputs.email_only != true)
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
@@ -53,7 +58,7 @@ jobs:
         run: node scripts/publish-brief.mjs
 
   send-email:
-    if: github.event.schedule == '30 0 * * *'
+    if: github.event.schedule == '30 0 * * *' || (github.event_name == 'workflow_dispatch' && inputs.email_only == true)
     runs-on: ubuntu-latest
     timeout-minutes: 10
 

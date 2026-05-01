@@ -57,20 +57,21 @@ run_agent() {
 log "Checking Claude auth..."
 claude --version 2>&1 | tee -a "$LOG" || true
 
-log "Launching 8 research agents in parallel..."
-run_agent "geopolitics" "$HAIKU"  &
-run_agent "ai"          "$SONNET" &
-run_agent "india"       "$HAIKU"  &
-run_agent "markets"     "$HAIKU"  &
-run_agent "stocks"      "$SONNET" &
-run_agent "tech"        "$HAIKU"  &
-run_agent "health"      "$HAIKU"  &
-run_agent "culture"     "$HAIKU"  &
+log "Launching 9 research agents in parallel..."
+run_agent "geopolitics"   "$HAIKU"  &
+run_agent "ai"            "$SONNET" &
+run_agent "india"         "$HAIKU"  &
+run_agent "markets"       "$HAIKU"  &
+run_agent "stocks_india"  "$SONNET" &
+run_agent "stocks_world"  "$SONNET" &
+run_agent "tech"          "$HAIKU"  &
+run_agent "health"        "$HAIKU"  &
+run_agent "culture"       "$HAIKU"  &
 wait
 log "All research agents complete"
 
 SUCCESS_COUNT=$(ls "$OUTPUT_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
-log "Research complete: $SUCCESS_COUNT/8 domains successful"
+log "Research complete: $SUCCESS_COUNT/9 domains successful"
 
 if [ "$SUCCESS_COUNT" -lt 3 ]; then
   log "FATAL: fewer than 3 domains succeeded. Aborting."
