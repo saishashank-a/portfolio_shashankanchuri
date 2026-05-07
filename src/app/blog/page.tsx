@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'anthropic-spacex-colossus',
+    date: 'May 2026',
+    tag: 'AI Infrastructure',
+    title: 'Anthropic and SpaceX: The Deal Nobody Saw Coming',
+    excerpt:
+      "Anthropic just rented every GPU in Elon Musk's Memphis data center. Three months ago, Musk called the company evil. This isn't a merger — it's the only block of near-term GPU capacity that could move fast enough.",
+  },
+  {
     slug: 'india-ai-funding-surge-q1-2026',
     date: 'Apr 2026',
     tag: 'AI Strategy',
