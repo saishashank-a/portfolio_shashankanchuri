@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'google-tpu-moment',
+    date: 'May 2026',
+    tag: 'AI Infrastructure',
+    title: 'The TPU Moment: A Supply Chain Story as a Silicon Story',
+    excerpt:
+      "Anthropic reserved a million TPUs. Meta is testing them. Google's Ironwood closed the per-chip gap with Nvidia — but the real story is supply chain optionality at hyperscale.",
+  },
+  {
     slug: 'anthropic-spacex-colossus',
     date: 'May 2026',
     tag: 'AI Infrastructure',

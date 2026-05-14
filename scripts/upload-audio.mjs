@@ -18,6 +18,7 @@ const files = [
   'public/audio/nvidia-ising-podcast.m4a',
   'public/audio/openai-grew-up-podcast.m4a',
   'public/audio/openai-spud-podcast.m4a',
+  'public/audio/google-tpu-moment-podcast.m4a',
 ]
 
 for (const file of files) {
