@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'anthropic-split-subscription',
+    date: 'May 2026',
+    tag: 'AI Infrastructure',
+    title: "Anthropic split your subscription in two. Here's the engineering logic.",
+    excerpt:
+      "Same week, Claude Code got more permissive interactively and significantly more expensive programmatically. The June 15 credit pool closes a 12×–175× subscription arbitrage. Cache economics, the SpaceX/Colossus unlock, and what to do before the cutover.",
+  },
+  {
     slug: 'google-tpu-moment',
     date: 'May 2026',
     tag: 'AI Infrastructure',
