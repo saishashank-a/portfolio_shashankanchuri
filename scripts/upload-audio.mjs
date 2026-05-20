@@ -20,6 +20,7 @@ const files = [
   'public/audio/openai-spud-podcast.m4a',
   'public/audio/google-tpu-moment-podcast.m4a',
   'public/audio/anthropic-split-subscription-podcast.m4a',
+  'public/audio/harness-engineering-podcast.m4a',
 ]
 
 for (const file of files) {

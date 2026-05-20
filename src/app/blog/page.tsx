@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'harness-engineering',
+    date: 'May 2026',
+    tag: 'AI Engineering',
+    title: 'Harness Engineering: Why the Model Stopped Being the Moat',
+    excerpt:
+      'A new discipline emerged in six weeks. Agent = Model + Harness. Six components, Hashimoto’s rule, and why 88% of agent projects never reach production.',
+  },
+  {
     slug: 'anthropic-split-subscription',
     date: 'May 2026',
     tag: 'AI Infrastructure',
