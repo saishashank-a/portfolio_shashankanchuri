@@ -12,8 +12,8 @@ OUTPUT_DIR="$REPO_ROOT/output"
 mkdir -p "$OUTPUT_DIR" "$LOG_DIR"
 
 HAIKU="claude-haiku-4-5-20251001"
-SONNET="claude-sonnet-4-6"
 CLAUDE_FLAGS="--dangerously-skip-permissions --output-format text"
+AGENT_TIMEOUT=360  # per-agent cap (s); 124 = killed
 
 log() {
   echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"
@@ -23,19 +23,21 @@ log "═════════════════════════
 log "Morning Debrief run: $DATE"
 log "════════════════════════════════════════════════════"
 
-rm -f "$OUTPUT_DIR"/*.md "$OUTPUT_DIR"/debrief.html
+rm -f "$OUTPUT_DIR"/*.md
 log "Cleared previous outputs"
 
 run_agent() {
   local domain=$1
   local model=$2
-  local start
+  local start status
   start=$(date +%s)
   log "  → [$domain] starting with $model"
-  if claude -p "$(cat "$SCRIPT_DIR/agents/${domain}.md")" \
-      --model "$model" $CLAUDE_FLAGS \
-      > "$OUTPUT_DIR/${domain}.md" \
-      2>> "$LOG_DIR/${domain}-${DATE}.err"; then
+  timeout "$AGENT_TIMEOUT" claude -p "$(cat "$SCRIPT_DIR/agents/${domain}.md")" \
+    --model "$model" $CLAUDE_FLAGS \
+    > "$OUTPUT_DIR/${domain}.md" \
+    2>> "$LOG_DIR/${domain}-${DATE}.err"
+  status=$?
+  if [ "$status" -eq 0 ]; then
     local elapsed bytes
     elapsed=$(($(date +%s) - start))
     bytes=$(wc -c < "$OUTPUT_DIR/${domain}.md" | tr -d ' ')
@@ -45,10 +47,11 @@ run_agent() {
     else
       log "  ✓ [$domain] done in ${elapsed}s ($bytes bytes)"
     fi
+  elif [ "$status" -eq 124 ]; then
+    log "  ✗ [$domain] TIMED OUT after ${AGENT_TIMEOUT}s — treating as failure"
+    rm -f "$OUTPUT_DIR/${domain}.md"
   else
-    log "  ✗ [$domain] FAILED — stdout:"
-    cat "$OUTPUT_DIR/${domain}.md" 2>/dev/null | tee -a "$LOG" || true
-    log "  ✗ [$domain] stderr:"
+    log "  ✗ [$domain] FAILED (exit $status) — stderr:"
     cat "$LOG_DIR/${domain}-${DATE}.err" 2>/dev/null | tee -a "$LOG" || true
     rm -f "$OUTPUT_DIR/${domain}.md"
   fi
@@ -59,11 +62,11 @@ claude --version 2>&1 | tee -a "$LOG" || true
 
 log "Launching 9 research agents in parallel..."
 run_agent "geopolitics"   "$HAIKU"  &
-run_agent "ai"            "$SONNET" &
+run_agent "ai"            "$HAIKU"  &
 run_agent "india"         "$HAIKU"  &
 run_agent "markets"       "$HAIKU"  &
-run_agent "stocks_india"  "$SONNET" &
-run_agent "stocks_world"  "$SONNET" &
+run_agent "stocks_india"  "$HAIKU"  &
+run_agent "stocks_world"  "$HAIKU"  &
 run_agent "tech"          "$HAIKU"  &
 run_agent "health"        "$HAIKU"  &
 run_agent "culture"       "$HAIKU"  &
@@ -78,21 +81,8 @@ if [ "$SUCCESS_COUNT" -lt 3 ]; then
   exit 1
 fi
 
-log "Running HTML assembler..."
-if (cd "$REPO_ROOT" && claude -p "$(cat "$SCRIPT_DIR/agents/assembler.md")" \
-    --model "$SONNET" $CLAUDE_FLAGS \
-    >> "$LOG" 2>&1); then
-  log "Assembler exited cleanly"
-else
-  log "FATAL: assembler failed"
-  exit 1
-fi
-
-if [ ! -f "$OUTPUT_DIR/debrief.html" ]; then
-  log "FATAL: assembler did not produce debrief.html"
-  exit 1
-fi
-
-HTML_SIZE=$(wc -c < "$OUTPUT_DIR/debrief.html" | tr -d ' ')
-log "debrief.html ready ($HTML_SIZE bytes)"
+# NOTE: no HTML assembler step. publish-brief.mjs parses output/*.md directly
+# into src/data/debrief.json (the site renders that). The old assembler wrote an
+# unused output/debrief.html and its failure falsely aborted the whole run.
+log "Research done — handing off to publish-brief.mjs"
 log "════════════════════════════════════════════════════"
