@@ -49,21 +49,27 @@ export function ProjectCard({ project }: Props) {
 
       {/* Links */}
       <div className="flex items-center gap-4 pt-2 border-t border-[var(--border)]">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium text-[var(--accent)] hover:underline inline-flex items-center gap-1"
-        >
-          View on GitHub
-          <ExternalLink size={12} aria-hidden="true" />
-        </a>
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-[var(--accent)] hover:underline inline-flex items-center gap-1"
+          >
+            View on GitHub
+            <ExternalLink size={12} aria-hidden="true" />
+          </a>
+        )}
         {project.demo && (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-[var(--secondary)] hover:text-[var(--fg)] inline-flex items-center gap-1 transition-colors"
+            className={`text-sm font-medium inline-flex items-center gap-1 transition-colors ${
+              project.github
+                ? 'text-[var(--secondary)] hover:text-[var(--fg)]'
+                : 'text-[var(--accent)] hover:underline'
+            }`}
           >
             Live Demo
             <ExternalLink size={12} aria-hidden="true" />

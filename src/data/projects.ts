@@ -3,17 +3,44 @@ export type Project = {
   impact?: string
   description: string
   tech: string[]
-  github: string
+  github?: string
   demo?: string
   featured?: boolean
 }
 
 export const projects: Project[] = [
   {
-    title: 'PrepWise',
-    impact: 'Zero-cost AI interview prep — resume parsing, gap analysis, live code execution in the browser',
+    title: 'Spoiled Duckie',
+    impact: 'Cinematic e-commerce storefront with animated loading ribbons, smooth-scroll, and full category/product/account flows',
     description:
-      'Browser-first interview prep platform. Parses resumes (PDF/DOCX), analyzes job descriptions for skill gaps, and runs real Python, SQL, and JavaScript code via WebAssembly — no backend, no API costs.',
+      'Premium boutique storefront with motion-led UX. Built on Next.js 16 and React 19 with Supabase for data/auth, Framer Motion choreography, and Lenis smooth scrolling.',
+    tech: ['Next.js', 'React 19', 'Supabase', 'Framer Motion', 'Tailwind'],
+    demo: 'https://spoiled-duckie.vercel.app/',
+    featured: true,
+  },
+  {
+    title: 'The Interface Review',
+    impact: 'Interactive catalogue of UI patterns and micro-animations in a single-file motion reference',
+    description:
+      'A hand-built reference library of interface components, transitions, and animation studies. Everything lives in one self-contained HTML file, no framework and no build step.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://the-interface-review.netlify.app/',
+    featured: true,
+  },
+  {
+    title: 'Toops Coffee',
+    impact: 'Multi-page brand site for a Hyderabad café and roastery: menu, shop, loyalty, events, story',
+    description:
+      'Hand-coded brand and storefront site for a neighbourhood café. Fifteen pages spanning menu, shop, wholesale, loyalty, and events, built from scratch with no framework.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: '/toops/index.html',
+    featured: true,
+  },
+  {
+    title: 'PrepWise',
+    impact: 'Zero-cost AI interview prep with resume parsing, gap analysis, and live code execution in the browser',
+    description:
+      'Browser-first interview prep platform. Parses resumes (PDF/DOCX), analyzes job descriptions for skill gaps, and runs real Python, SQL, and JavaScript code via WebAssembly, with no backend and no API costs.',
     tech: ['Next.js', 'TypeScript', 'Pyodide', 'PGlite', 'Firebase', 'Three.js'],
     github: 'https://github.com/saishashank-a/PrepWise',
     demo: 'https://prep-wise-tawny-ten.vercel.app/',
