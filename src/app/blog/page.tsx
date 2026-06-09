@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'claude-fable-5',
+    date: 'Jun 2026',
+    tag: 'AI Strategy',
+    title: 'Claude Fable 5: Anthropic Ships the Model It Called Too Dangerous in April',
+    excerpt:
+      'In April, Anthropic said Mythos-class capability was too dangerous to release. On June 9, they shipped it to everyone. Fable 5 and Mythos 5 are the same weights  -  the only difference is a classifier-routing layer. Capability and safety became separable.',
+  },
+  {
     slug: 'harness-engineering',
     date: 'May 2026',
     tag: 'AI Engineering',
