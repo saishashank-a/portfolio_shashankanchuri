@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'the-money-is-going-in-a-circle',
+    date: 'Jun 2026',
+    tag: 'AI Infrastructure',
+    title: 'The Money Is Going in a Circle',
+    excerpt:
+      "A trillion-dollar valuation and a fourteen-billion-dollar loss describe the same company in the same year. Follow the dollars through AI's capital frenzy — the circular financing loop, the bull and bear cases, and what to build for if the circle breaks.",
+  },
+  {
     slug: 'claude-fable-5',
     date: 'Jun 2026',
     tag: 'AI Strategy',
