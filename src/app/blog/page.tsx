@@ -125,29 +125,31 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen px-4 md:px-6 pt-8 pb-24">
+      <div className="paper-sheet max-w-2xl mx-auto">
         {/* Header */}
-        <p className="font-mono text-sm text-[var(--accent)] mb-3">// Blog</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] mb-3">Context Window</h1>
+        <p className="font-hand text-2xl text-[var(--accent)] mb-2">the blog ✳</p>
+        <h1 className="font-display text-[clamp(2rem,5vw,3.1rem)] font-semibold tracking-tight text-[var(--fg)] leading-[1.05] mb-3">Context Window</h1>
         <p className="text-[var(--secondary)] leading-relaxed mb-12">
           AI research, tools, and ideas worth paying attention to. Written when there&apos;s something worth saying.
         </p>
 
         {/* Posts */}
-        <div className="space-y-px border border-[var(--border)] rounded-sm overflow-hidden mb-12">
-          {posts.map((post) => (
+        <div className="flex flex-col gap-5 mb-12">
+          {posts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="block bg-[var(--surface)] hover:bg-[var(--border)] transition-colors px-5 py-5 group"
+              className={`group block rounded-xl bg-[#faf3e6] px-5 py-5 ring-1 ring-black/5 shadow-[0_10px_24px_-16px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:-translate-y-1 ${
+                i % 2 ? 'hover:rotate-[0.6deg]' : 'hover:-rotate-[0.6deg]'
+              }`}
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-mono text-[var(--secondary)]">{post.date}</span>
+                <span className="font-hand text-lg text-[var(--secondary)]">{post.date}</span>
                 <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
-                <span className="text-xs font-mono text-[var(--accent)]">{post.tag}</span>
+                <span className="rounded-full border border-[var(--accent)]/40 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[var(--accent)]">{post.tag}</span>
               </div>
-              <h2 className="text-base font-semibold text-[var(--fg)] mb-1.5 group-hover:text-[var(--accent)] transition-colors">
+              <h2 className="font-display text-xl font-semibold leading-snug text-[var(--fg)] mb-1.5 group-hover:text-[var(--accent)] transition-colors">
                 {post.title}
               </h2>
               <p className="text-sm text-[var(--secondary)] leading-relaxed">{post.excerpt}</p>
@@ -156,9 +158,9 @@ export default function BlogPage() {
         </div>
 
         {/* Newsletter signup */}
-        <div className="border border-[var(--border)] bg-[var(--surface)] rounded-sm p-6">
-          <p className="font-mono text-sm text-[var(--fg)] mb-1">Stay in the loop</p>
-          <p className="text-sm text-[var(--secondary)] mb-5">
+        <div className="-rotate-1 bg-[#e9b949] text-[#1f1d1a] p-6 shadow-[0_14px_30px_-16px_rgba(0,0,0,0.55)]">
+          <p className="font-hand text-2xl mb-1">stay in the loop ✳</p>
+          <p className="text-sm text-[#1f1d1a]/75 mb-5">
             Get notified when the weekly digest launches.
           </p>
           <NotifyForm />
@@ -167,7 +169,7 @@ export default function BlogPage() {
         <div className="mt-8">
           <Link
             href="/"
-            className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
+            className="font-hand text-lg text-[var(--secondary)] hover:text-[var(--accent)] transition-colors"
           >
             ← Back to portfolio
           </Link>

@@ -1,12 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 
 const POST_URL = 'https://shashankanchuri.space/blog/arm-agi-cpu-breaks-35-year-rule'
 const POST_TITLE = 'Arm just broke a 35-year rule and it matters more than you think'
 
 export function ShareBar() {
   const [copied, setCopied] = useState(false)
+  // false on the server and during hydration, so SSR and client HTML match
+  const canShare = useSyncExternalStore(() => () => {}, () => !!navigator.share, () => false)
 
   async function handleNativeShare() {
     if (navigator.share) {
@@ -39,7 +41,7 @@ export function ShareBar() {
         <LinkedInIcon /> LinkedIn
       </a>
 
-      {typeof navigator !== 'undefined' && !!navigator.share && (
+      {canShare && (
         <button onClick={handleNativeShare} className="share-btn" aria-label="Share">
           <ShareIcon /> More
         </button>

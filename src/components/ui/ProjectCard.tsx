@@ -1,81 +1,74 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight, Github } from 'lucide-react'
 import type { Project } from '@/data/projects'
 
-type Props = {
-  project: Project
+// Cover colours cycle so neighbouring cards differ
+const covers = [
+  { bg: '#e35342', fg: '#f2e3cf' },
+  { bg: '#f2e3cf', fg: '#1f1d1a' },
+  { bg: '#2f5d50', fg: '#f2e3cf' },
+  { bg: '#e9b949', fg: '#1f1d1a' },
+  { bg: '#3a4a7a', fg: '#f2e3cf' },
+]
+
+function hostOf(p: Project) {
+  const url = p.demo ?? p.github ?? ''
+  return url.replace(/^https?:\/\//, '').replace(/\/$/, '') || 'localhost'
 }
 
-export function ProjectCard({ project }: Props) {
+// A project as an app window: chrome bar + cover. Hover (or tap) slides the details up.
+export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
+  const [open, setOpen] = useState(false)
+  const c = covers[index % covers.length]
+
   return (
-    <motion.article
-      className="group relative border border-[var(--border)] bg-[var(--surface)] rounded-sm p-6 flex flex-col gap-4"
-      whileHover={{
-        scale: 1.02,
-        filter: 'drop-shadow(0 0 16px rgba(217,119,87,0.35))',
-      }}
-      transition={{ duration: 0.2 }}
+    <article
+      className="group relative w-72 md:w-80 overflow-hidden rounded-2xl bg-[#faf6ee] text-[#1f1d1a] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.7)] ring-1 ring-black/10"
+      onClick={() => setOpen((v) => !v)}
     >
-      {/* Featured badge */}
-      {project.featured && (
-        <span className="absolute top-4 right-4 text-[10px] font-mono text-[var(--accent)] border border-[var(--accent)]/30 px-2 py-0.5 rounded-full">
-          Featured
+      <div className="flex items-center gap-1.5 px-3 py-2 border-b border-black/10 bg-[#efe6d6]">
+        <span className="h-2.5 w-2.5 rounded-full bg-[#e35342]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#e9b949]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#7aa36b]" />
+        <span className="ml-2 truncate font-mono text-[10px] text-black/50">{hostOf(project)}</span>
+      </div>
+
+      <div className="relative h-48 p-5 flex flex-col justify-between" style={{ backgroundColor: c.bg, color: c.fg }}>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-70">
+          {project.tech.slice(0, 3).join(' · ')}
         </span>
-      )}
+        <h3 className="font-display text-3xl leading-[1.05] font-semibold tracking-tight">{project.title}</h3>
 
-      <div className="flex flex-col gap-2 flex-1">
-        <h3 className="text-base font-semibold text-[var(--fg)] pr-16">{project.title}</h3>
-
-        {project.impact && (
-          <p className="text-sm italic text-[var(--secondary)] line-clamp-2">{project.impact}</p>
-        )}
-
-        <p className="text-sm text-[var(--muted)] leading-relaxed">{project.description}</p>
+        {/* Details sheet */}
+        <div
+          className={`absolute inset-0 p-5 flex flex-col gap-3 bg-[#1f1d1a]/95 text-[#f2e3cf] transition-transform duration-300 ease-out group-hover:translate-y-0 ${
+            open ? 'translate-y-0' : 'translate-y-full'
+          }`}
+        >
+          <p className="font-hand text-lg leading-snug">{project.impact ?? project.description}</p>
+          <div className="mt-auto flex flex-wrap gap-1.5">
+            {project.tech.slice(0, 4).map((t) => (
+              <span key={t} className="rounded-full border border-[#f2e3cf]/30 px-2 py-0.5 font-mono text-[10px]">
+                {t}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-3 text-sm">
+            {project.demo && (
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 text-[#e35342] hover:underline">
+                Live <ArrowUpRight size={14} />
+              </a>
+            )}
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 text-[#f2e3cf]/80 hover:underline" aria-label={`${project.title} on GitHub`}>
+                <Github size={14} /> Code
+              </a>
+            )}
+          </div>
+        </div>
       </div>
-
-      {/* Tech pills */}
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="text-xs font-mono text-[var(--secondary)] bg-[var(--background)] border border-[var(--border)] px-2 py-0.5 rounded-sm"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-
-      {/* Links */}
-      <div className="flex items-center gap-4 pt-2 border-t border-[var(--border)]">
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-[var(--accent)] hover:underline inline-flex items-center gap-1"
-          >
-            View on GitHub
-            <ExternalLink size={12} aria-hidden="true" />
-          </a>
-        )}
-        {project.demo && (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-sm font-medium inline-flex items-center gap-1 transition-colors ${
-              project.github
-                ? 'text-[var(--secondary)] hover:text-[var(--fg)]'
-                : 'text-[var(--accent)] hover:underline'
-            }`}
-          >
-            Live Demo
-            <ExternalLink size={12} aria-hidden="true" />
-          </a>
-        )}
-      </div>
-    </motion.article>
+    </article>
   )
 }

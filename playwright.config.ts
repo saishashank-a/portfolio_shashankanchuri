@@ -12,14 +12,16 @@ export default defineConfig({
     ['html', { outputFolder: 'e2e/playwright-report', open: 'never' }],
   ],
   use: {
-    baseURL: 'http://localhost:3000',
+    // Port matches `pnpm dev` / `pnpm start` in package.json
+    baseURL: 'http://localhost:3100',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      // System Chrome: the Playwright MCP plugin's newer Playwright garbage-collects this repo's bundled Chromium
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
   ],
 })

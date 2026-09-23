@@ -1,12 +1,29 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Geist_Mono, Gochi_Hand, Fraunces } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { Navbar } from '@/components/layout/Navbar'
+import { Footer } from '@/components/layout/Footer'
+import { Cursor } from '@/components/ui/Cursor'
+import { TileBorder } from '@/components/ui/TileBorder'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
   adjustFontFallback: true,
+})
+
+const hand = Gochi_Hand({
+  variable: '--font-hand',
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const serif = Fraunces({
+  variable: '--font-display',
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['SOFT', 'WONK', 'opsz'],
 })
 
 const geistMono = Geist_Mono({
@@ -41,9 +58,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} ${hand.variable} ${serif.variable} antialiased`}>
         <ThemeProvider>
-          {children}
+          <div className="min-h-screen overflow-x-clip">
+            <Cursor />
+            <TileBorder />
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

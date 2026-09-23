@@ -14,17 +14,14 @@ test.describe('Homepage', () => {
   test('page loads with a 200-level response', async ({ page }) => {
     // If the page loaded (no throw from goto), we already have a 200.
     // Assert something fundamental is present.
-    await expect(page).toHaveURL('http://localhost:3000/')
+    await expect(page).toHaveURL('/')
   })
 
   test('hero headline is visible', async ({ page }) => {
-    // Hero renders an <h1> whose words animate individually via framer-motion spans.
-    // Target the h1 role directly — it is always in the DOM (LCP safe).
-    const h1 = page.getByRole('heading', { level: 1 }).first()
+    // Hero <h1> is the signature: letters are aria-hidden framer-motion spans,
+    // the accessible name comes from aria-label, so match on that.
+    const h1 = page.getByRole('heading', { level: 1, name: 'Shashank Anchuri' })
     await expect(h1).toBeVisible()
-    // Each word is in its own inline-block span — Playwright serialises them
-    // without inter-word spaces, so match the concatenated form.
-    await expect(h1).toContainText('AIstack')
   })
 
   test('navigation bar is visible', async ({ page }) => {
@@ -65,12 +62,12 @@ test.describe('Blog page', () => {
   })
 
   test('blog page loads', async ({ page }) => {
-    await expect(page).toHaveURL('http://localhost:3000/blog')
+    await expect(page).toHaveURL('/blog')
   })
 
-  test('heading "The AI Weekly" is visible', async ({ page }) => {
+  test('heading "Context Window" is visible', async ({ page }) => {
     await expect(
-      page.getByRole('heading', { name: /The AI Weekly/i })
+      page.getByRole('heading', { name: /Context Window/i })
     ).toBeVisible()
   })
 
@@ -108,7 +105,7 @@ test.describe('Blog post – TurboQuant', () => {
   })
 
   test('post page loads', async ({ page }) => {
-    await expect(page).toHaveURL(`http://localhost:3000${POST_URL}`)
+    await expect(page).toHaveURL(POST_URL)
   })
 
   test('post heading is visible', async ({ page }) => {

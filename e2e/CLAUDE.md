@@ -1,3 +1,28 @@
+# e2e — Playwright tests
+
+Chromium-only Playwright suite for the Portfolio site. Config: `../playwright.config.ts` (baseURL `http://localhost:3100`, set only in the config; specs use relative URLs, `testDir: ./e2e`).
+
+## Running
+- **Start a server first.** There is NO `webServer` block in the config — run `pnpm dev` (or `pnpm build && pnpm start`) in a separate terminal, or every test errors with connection refused.
+- All tests: `pnpm exec playwright test`
+- One test: `pnpm exec playwright test -g "TurboQuant"`
+- HTML report: `pnpm exec playwright show-report e2e/playwright-report`
+
+## Layout of `portfolio.spec.ts`
+Three `describe` blocks:
+- **Homepage** — 200 response, hero `<h1>`, nav, projects heading ("Things I've built"), contact heading, screenshot.
+- **Blog page** — `/blog` loads, "Context Window" heading, post links, the TurboQuant post is listed, screenshot.
+- **Blog post – TurboQuant** + **Navigation flow** — post page, back link, audio player (button aria-label + progress slider), and index→post navigation.
+
+## Gotchas
+- **Hero `<h1>` is split into aria-hidden letter spans.** Its text content is unreliable; the accessible name comes from `aria-label`. Match with `getByRole('heading', { level: 1, name: 'Shashank Anchuri' })`, not `toContainText`.
+- **Always target roles, not animated spans.** The `<h1>` is in the DOM at LCP; word spans animate in. Use `getByRole('heading', { level: 1 })`.
+- Outputs (`test-results/`, `playwright-report/`, `screenshots/`) are gitignored — safe to delete.
+- If you add a new blog post and want it asserted, add it to the "Blog page" block the same way TurboQuant is checked.
+
+## When a test reveals a real bug
+Fix the app code, then add a one-line lesson here: `YYYY-MM-DD: <test> failed because <cause> → <fix>`.
+
 <claude-mem-context>
 # Recent Activity
 

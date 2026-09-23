@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 
 export default function ArmAGICPUPost() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen px-4 md:px-6 pt-8 pb-24">
+      <div className="paper-sheet max-w-2xl mx-auto">
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 font-hand text-lg text-[var(--secondary)] hover:text-[var(--accent)] transition-colors mb-10"
         >
           ← Context Window
         </Link>
 
         {/* Header */}
-        <p className="font-mono text-xs text-[var(--accent)] mb-3">Apr 2026 · AI Infrastructure</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] leading-tight mb-6">
+        <p className="font-hand text-xl text-[var(--accent)] mb-2">Apr 2026 · AI Infrastructure</p>
+        <h1 className="font-display text-[clamp(2rem,5vw,3.1rem)] font-semibold tracking-tight text-[var(--fg)] leading-[1.05] mb-6">
           Arm just broke a 35-year rule and it matters more than you think
         </h1>
 
@@ -50,7 +50,7 @@ export default function ArmAGICPUPost() {
           <h2>What Arm just did</h2>
 
           <p>
-            On March 24, at an event called "Arm Everywhere" in San Francisco, Arm CEO Rene Haas
+            On March 24, at an event called &quot;Arm Everywhere&quot; in San Francisco, Arm CEO Rene Haas
             walked onstage and held up a physical chip. The Arm AGI CPU. The company&apos;s first
             finished silicon product in its entire 35-year history.
           </p>

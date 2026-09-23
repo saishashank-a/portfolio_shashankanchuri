@@ -1,145 +1,59 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Github, Linkedin, Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
-import { LogoIcon } from '@/components/ui/LogoIcon'
+import { Face } from '@/components/ui/Doodles'
 
-const navLinks = [
-  { label: 'About', href: '/#about' },
-  { label: 'Expertise', href: '/#expertise' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'Projects', href: '/#projects' },
-  { label: 'Skills', href: '/#skills' },
-  { label: 'Blog', href: '/#blog' },
-  { label: 'Debrief', href: '/debrief' },
-  { label: 'Contact', href: '/#contact' },
+const stroke = { fill: 'none', stroke: 'currentColor', strokeWidth: 2.2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
+
+// Tiny doodle + handwritten hint that pop up over each link on hover
+const links = [
+  { label: 'about', href: '/#about', hint: 'hi, it’s me', icon: <g {...stroke}><circle cx="16" cy="16" r="12" /><circle cx="12" cy="13" r="1.3" fill="currentColor" /><circle cx="20" cy="13" r="1.3" fill="currentColor" /><path d="M11 19 Q16 24 21 19" /></g> },
+  { label: 'work', href: '/#work', hint: 'the good stuff', icon: <g {...stroke}><rect x="5" y="8" width="22" height="15" rx="2" /><path d="M2 26 H30 M13 16 l-3 -2 3 -2 M19 12 l3 2 -3 2" /></g> },
+  { label: 'blog', href: '/blog', hint: 'thinking out loud', icon: <g {...stroke}><path d="M6 26 L8 19 L22 5 L27 10 L13 24 Z M19 8 L24 13" /><path d="M6 26 L10 25" /></g> },
+  { label: 'debrief', href: '/debrief', hint: 'fresh every morning', icon: <g {...stroke}><circle cx="16" cy="18" r="6" /><path d="M16 6 V9 M6 18 H9 M23 18 H26 M9 11 l2 2 M23 11 l-2 2 M4 27 H28" /></g> },
+  { label: 'connect', href: '/#connect', hint: 'say hello!', icon: <g {...stroke}><path d="M3 15 L29 5 L20 28 L15 19 Z M15 19 L29 5" /></g> },
 ]
 
+// Handwritten site nav (every page); hover draws a scribble underline and pops a doodle
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const closeMenu = () => setMenuOpen(false)
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]'
-          : 'bg-transparent'
-      }`}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-mono text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-        >
-          <LogoIcon size={28} />
-          <span className="text-[var(--accent)]">Shashank</span> Anchuri
+    <header className="relative z-30 pt-12 pb-4">
+      <nav aria-label="Main" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 sm:gap-x-6 md:gap-x-10 font-hand text-base sm:text-lg md:text-xl text-[var(--fg)]">
+        {/* logo: doodle portrait; winks on hover */}
+        <Link href="/" aria-label="Home" className="group/face relative h-10 w-10 text-[var(--accent)] transition-transform duration-300 hover:-rotate-6 hover:scale-110">
+          <Face className="absolute inset-0 h-full w-full transition-opacity group-hover/face:opacity-0" />
+          <Face wink className="absolute inset-0 h-full w-full opacity-0 transition-opacity group-hover/face:opacity-100" />
         </Link>
-
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
+        {links.map((l) => (
+          <Link key={l.label} href={l.href} className="group relative px-1">
+            <svg
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 -top-9 h-8 w-8 -translate-x-1/2 text-[var(--accent)] opacity-0 translate-y-2 scale-75 -rotate-12 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:rotate-0"
             >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop social icons + theme toggle */}
-        <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
-          <a
-            href="https://github.com/saishashank-a"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-          >
-            <Github size={18} />
-          </a>
-          <a
-            href="https://linkedin.com/in/sai-shashank-anchuri"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-          >
-            <Linkedin size={18} />
-          </a>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+              {l.icon}
+            </svg>
+            {l.label}
+            <svg viewBox="0 0 100 12" preserveAspectRatio="none" className="absolute -bottom-1 left-0 h-2 w-full text-[var(--accent)]" aria-hidden="true">
+              <path
+                d="M2 8 Q25 2 50 7 T98 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                pathLength={1}
+                className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-300 group-hover:[stroke-dashoffset:0]"
+              />
+            </svg>
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap text-xs text-[var(--secondary)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              {l.hint}
+            </span>
+          </Link>
+        ))}
       </nav>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-[var(--background)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 pb-6"
-          >
-            <div className="flex flex-col gap-4 pt-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className="text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors py-1"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="flex items-center gap-4 pt-2 border-t border-[var(--border)]">
-                <ThemeToggle />
-                <a
-                  href="https://github.com/saishashank-a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub profile"
-                  className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-                >
-                  <Github size={18} />
-                </a>
-                <a
-                  href="https://linkedin.com/in/sai-shashank-anchuri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
-                  className="text-[var(--secondary)] hover:text-[var(--fg)] transition-colors"
-                >
-                  <Linkedin size={18} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   )
 }

@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 
 export default function AnthropicSpacexColossusPost() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen px-4 md:px-6 pt-8 pb-24">
+      <div className="paper-sheet max-w-2xl mx-auto">
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 font-hand text-lg text-[var(--secondary)] hover:text-[var(--accent)] transition-colors mb-10"
         >
           ← Context Window
         </Link>
 
         {/* Header */}
-        <p className="font-mono text-xs text-[var(--accent)] mb-3">May 2026 · AI Infrastructure</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] leading-tight mb-6">
+        <p className="font-hand text-xl text-[var(--accent)] mb-2">May 2026 · AI Infrastructure</p>
+        <h1 className="font-display text-[clamp(2rem,5vw,3.1rem)] font-semibold tracking-tight text-[var(--fg)] leading-[1.05] mb-6">
           Anthropic and SpaceX: The Deal Nobody Saw Coming
         </h1>
 

@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 
 export default function TurboQuantPost() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen px-4 md:px-6 pt-8 pb-24">
+      <div className="paper-sheet max-w-2xl mx-auto">
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 font-hand text-lg text-[var(--secondary)] hover:text-[var(--accent)] transition-colors mb-10"
         >
           ← Context Window
         </Link>
 
         {/* Header */}
-        <p className="font-mono text-xs text-[var(--accent)] mb-3">Apr 2026 · AI Research</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] leading-tight mb-6">
+        <p className="font-hand text-xl text-[var(--accent)] mb-2">Apr 2026 · AI Research</p>
+        <h1 className="font-display text-[clamp(2rem,5vw,3.1rem)] font-semibold tracking-tight text-[var(--fg)] leading-[1.05] mb-6">
           TurboQuant: How Google just made AI 6x cheaper to run, and why you should care
         </h1>
 
@@ -39,30 +39,30 @@ export default function TurboQuantPost() {
 
         {/* Article body */}
         <div className="prose-blog">
-          <p>You've been optimizing the wrong thing.</p>
+          <p>You&apos;ve been optimizing the wrong thing.</p>
 
           <p>
-            Everyone's focused on model size, cutting parameters, distilling weights, squeezing
-            networks into smaller shapes. But if you're running LLMs in production today, the real
-            memory killer isn't the model. It's the model's short-term memory.
+            Everyone&apos;s focused on model size, cutting parameters, distilling weights, squeezing
+            networks into smaller shapes. But if you&apos;re running LLMs in production today, the real
+            memory killer isn&apos;t the model. It&apos;s the model&apos;s short-term memory.
           </p>
 
           <p>
             As context windows stretch to 128K, 256K, even 1M tokens, the key-value (KV) cache  - 
-            the scratchpad an LLM fills with intermediate calculations so it doesn't reprocess
-            everything from scratch  -  balloons into gigabytes of GPU memory per session. That's the
+            the scratchpad an LLM fills with intermediate calculations so it doesn&apos;t reprocess
+            everything from scratch  -  balloons into gigabytes of GPU memory per session. That&apos;s the
             actual cost driver. And until now, nobody had a clean solution.
           </p>
 
           <p>
             Traditional quantization methods try to compress this cache, but they carry a hidden
             tax: scaling factors, normalization constants, codebook entries, all stored in full
-            precision. The overhead eats 1-2 bits per number back. It's like switching to a smaller
+            precision. The overhead eats 1-2 bits per number back. It&apos;s like switching to a smaller
             suitcase but needing a second bag just for the packing cubes.
           </p>
 
           <p>
-            Google Research's TurboQuant (accepted at ICLR 2026) cracks this trade-off entirely.{' '}
+            Google Research&apos;s TurboQuant (accepted at ICLR 2026) cracks this trade-off entirely.{' '}
             <strong>3-bit compression. Zero accuracy loss. No fine-tuning. No overhead.</strong>
           </p>
 
@@ -78,16 +78,16 @@ export default function TurboQuantPost() {
           <p>
             <strong>Stage 1: PolarQuant.</strong> Instead of compressing data in standard Cartesian
             coordinates, PolarQuant randomly rotates each data vector and converts it from Cartesian
-            to polar coordinates. The radius captures the vector's overall strength. The angles
+            to polar coordinates. The radius captures the vector&apos;s overall strength. The angles
             capture its meaning. After rotation, the angle distributions become predictable and
             tightly concentrated, which means the expensive per-block normalization constants
-            traditional methods store simply aren't needed anymore. The overhead disappears at the
+            traditional methods store simply aren&apos;t needed anymore. The overhead disappears at the
             source.
           </p>
 
           <p>
-            Think of it this way: instead of giving someone directions as "Go 3 blocks East, 4
-            blocks North," you say "Go 5 blocks at 37 degrees." Same information. Simpler geometry.
+            Think of it this way: instead of giving someone directions as &quot;Go 3 blocks East, 4
+            blocks North,&quot; you say &quot;Go 5 blocks at 37 degrees.&quot; Same information. Simpler geometry.
             Zero bookkeeping.
           </p>
 
@@ -96,7 +96,7 @@ export default function TurboQuantPost() {
             excellent, but it leaves a small residual rounding error. QJL takes that leftover and
             compresses it to a single sign bit (+1 or −1) per dimension, with zero additional memory
             overhead. It uses a special estimator that pairs high-precision queries against
-            low-precision stored data so the biases cancel out mathematically. It's the 1-bit
+            low-precision stored data so the biases cancel out mathematically. It&apos;s the 1-bit
             janitor that sweeps up what PolarQuant left behind.
           </p>
 
@@ -130,7 +130,7 @@ export default function TurboQuantPost() {
           <h2>The numbers</h2>
 
           <p>
-            These aren't "worked on our benchmark" results. They're tested across Llama-3.1-8B,
+            These aren&apos;t &quot;worked on our benchmark&quot; results. They&apos;re tested across Llama-3.1-8B,
             Gemma, and Mistral, on five separate evaluation frameworks: LongBench, Needle in a
             Haystack, RULER, ZeroSCROLLS, and L-Eval.
           </p>
@@ -152,9 +152,9 @@ export default function TurboQuantPost() {
           </ol>
 
           <p>
-            That last point deserves emphasis. TurboQuant is data-oblivious. You don't retrain. You
-            don't tune codebooks. You don't rebuild indices when your data distributions shift. You
-            apply it, and it works. That's rare in production.
+            That last point deserves emphasis. TurboQuant is data-oblivious. You don&apos;t retrain. You
+            don&apos;t tune codebooks. You don&apos;t rebuild indices when your data distributions shift. You
+            apply it, and it works. That&apos;s rare in production.
           </p>
 
           {/* Comic */}
@@ -168,7 +168,7 @@ export default function TurboQuantPost() {
             />
             <figcaption>
               What it feels like to read the TurboQuant paper as a developer, from GPU memory pain
-              to "wait, 3 bits and zero accuracy loss?" Generated via NotebookLM.
+              to &quot;wait, 3 bits and zero accuracy loss?&quot; Generated via NotebookLM.
             </figcaption>
           </figure>
 
@@ -185,14 +185,14 @@ export default function TurboQuantPost() {
 
           <p>
             <strong>No fine-tuning required.</strong> This is a post-training, drop-in method. It
-            works on existing models immediately. You don't need a retraining budget or a labeled
+            works on existing models immediately. You don&apos;t need a retraining budget or a labeled
             dataset.
           </p>
 
           <p>
             <strong>Provably optimal.</strong> PolarQuant and QJL are backed by theoretical
             guarantees near information-theoretic lower bounds, not just empirical performance on a
-            favorable test set. These are mathematically grounded results. That's not common in this
+            favorable test set. These are mathematically grounded results. That&apos;s not common in this
             field.
           </p>
 
@@ -207,8 +207,8 @@ export default function TurboQuantPost() {
           <h2>What this means if you build things</h2>
 
           <p>
-            <strong>RAG pipeline builders:</strong> The most common RAG failure isn't retrieval;
-            it's context window saturation. You retrieve 20 relevant chunks, but only 5 fit into
+            <strong>RAG pipeline builders:</strong> The most common RAG failure isn&apos;t retrieval;
+            it&apos;s context window saturation. You retrieve 20 relevant chunks, but only 5 fit into
             generation context. A 5-6x KV cache compression shifts that ceiling dramatically.
             Smaller embedding indices, longer retrievable context in generation, better answers at
             lower cost.
@@ -223,7 +223,7 @@ export default function TurboQuantPost() {
 
           <p>
             <strong>On-device and edge AI:</strong> Models that currently need 16-24GB VRAM could
-            realistically run on 4-8GB devices when the KV cache isn't eating memory. 7B parameter
+            realistically run on 4-8GB devices when the KV cache isn&apos;t eating memory. 7B parameter
             models on laptops and phones stop being hypothetical.
           </p>
 
@@ -235,8 +235,8 @@ export default function TurboQuantPost() {
 
           <p>
             Because it requires no fine-tuning or retraining, TurboQuant drops directly into
-            existing systems. No migration plan, no downtime window, no retraining run. That's the
-            practical value that separates a research result from something you'd actually ship.
+            existing systems. No migration plan, no downtime window, no retraining run. That&apos;s the
+            practical value that separates a research result from something you&apos;d actually ship.
           </p>
 
           {/* Mind map */}
@@ -249,7 +249,7 @@ export default function TurboQuantPost() {
               className="rounded-sm w-full h-auto"
             />
             <figcaption>
-              Mind map of TurboQuant's full architecture  -  core concept, two-stage pipeline
+              Mind map of TurboQuant&apos;s full architecture  -  core concept, two-stage pipeline
               (PolarQuant + QJL), key benefits, and applications. Generated via NotebookLM.
             </figcaption>
           </figure>
@@ -260,20 +260,20 @@ export default function TurboQuantPost() {
 
           <p>
             This paper represents the quantization field maturing. Not another empirical trick that
-            worked on someone's benchmark, but a theoretically grounded, composable set of building
+            worked on someone&apos;s benchmark, but a theoretically grounded, composable set of building
             blocks with proofs attached.
           </p>
 
           <p>
-            PolarQuant and QJL are useful independently. They're not just parts of TurboQuant;
-            they're algorithmic contributions that will show up in other contexts. Within a year,
+            PolarQuant and QJL are useful independently. They&apos;re not just parts of TurboQuant;
+            they&apos;re algorithmic contributions that will show up in other contexts. Within a year,
             some version of these ideas will likely land in vLLM, TensorRT-LLM, or llama.cpp. The
             inference optimization space is moving fast, and the teams maintaining those engines read
             these papers.
           </p>
 
           <p>
-            The race in AI right now isn't just about bigger models. It's about making inference
+            The race in AI right now isn&apos;t just about bigger models. It&apos;s about making inference
             cheaper, faster, and more accessible  -  on more devices, at more price points. TurboQuant
             gives that goal a concrete address.
           </p>

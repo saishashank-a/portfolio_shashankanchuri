@@ -1,12 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 
 const POST_URL = 'https://shashankanchuri.space/blog/turboquant-how-google-just-made-ai-6x-cheaper'
 const POST_TITLE = 'TurboQuant: How Google just made AI 6x cheaper to run'
 
 export function ShareBar() {
   const [copied, setCopied] = useState(false)
+  // false on the server and during hydration, so SSR and client HTML match
+  const canShare = useSyncExternalStore(() => () => {}, () => !!navigator.share, () => false)
 
   async function handleNativeShare() {
     if (navigator.share) {
@@ -67,7 +69,7 @@ export function ShareBar() {
       </a>
 
       {/* Native share — only rendered on supported devices */}
-      {typeof navigator !== 'undefined' && !!navigator.share && (
+      {canShare && (
         <button onClick={handleNativeShare} className="share-btn" aria-label="Share">
           <ShareIcon /> More
         </button>

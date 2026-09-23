@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 function EngineerTake({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-6 border-l-2 border-[var(--accent)] bg-[var(--surface)] rounded-r-sm pl-5 pr-4 py-4">
-      <p className="font-mono text-xs text-[var(--accent)] uppercase tracking-wider mb-3">
+    <div className="my-8 -rotate-1 bg-[#e9b949] text-[#1f1d1a] px-6 py-5 shadow-[0_14px_30px_-16px_rgba(0,0,0,0.55)]">
+      <p className="font-hand text-xl mb-2">
         AI Engineer&apos;s Take
       </p>
       {children}
@@ -29,19 +29,19 @@ function EngineerTake({ children }: { children: React.ReactNode }) {
 
 export default function ClaudeFable5Post() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen px-4 md:px-6 pt-8 pb-24">
+      <div className="paper-sheet max-w-2xl mx-auto">
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-[var(--secondary)] hover:text-[var(--fg)] transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 font-hand text-lg text-[var(--secondary)] hover:text-[var(--accent)] transition-colors mb-10"
         >
           ← Context Window
         </Link>
 
         {/* Header */}
-        <p className="font-mono text-xs text-[var(--accent)] mb-3">Jun 2026 · AI Strategy</p>
-        <h1 className="text-3xl font-bold text-[var(--fg)] leading-tight mb-6">
+        <p className="font-hand text-xl text-[var(--accent)] mb-2">Jun 2026 · AI Strategy</p>
+        <h1 className="font-display text-[clamp(2rem,5vw,3.1rem)] font-semibold tracking-tight text-[var(--fg)] leading-[1.05] mb-6">
           Claude Fable 5: Anthropic Ships the Model It Called Too Dangerous in April
         </h1>
 
