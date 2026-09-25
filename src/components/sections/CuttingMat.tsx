@@ -36,7 +36,10 @@ export function CuttingMat() {
           <p className="font-hand text-xl text-[var(--secondary)]">
             {mode === 'scatter'
               ? 'and the places I built them. hover a badge to flip it, hover an object for the story, grab anything to move it.'
-              : 'one at a time. use the arrows, ← → keys, or swipe.'}
+              : <>
+                  <span className="md:hidden">they roll by on their own. hold one to pause.</span>
+                  <span className="max-md:hidden">one at a time. use the arrows, ← → keys, or swipe.</span>
+                </>}
           </p>
           <LayoutToggle mode={mode} onChange={pick} />
         </div>

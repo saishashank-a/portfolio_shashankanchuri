@@ -5,14 +5,17 @@ import { LayoutGrid, GalleryHorizontal } from 'lucide-react'
 
 export type Mode = 'scatter' | 'strip'
 
-// Per-visitor layout preference, keyed per section. Read after hydration so server and client HTML match.
+// Per-visitor layout preference, keyed per section; phones default to 'strip'. Read after hydration so server and client HTML match.
 export function useLayoutMode(storageKey: string): [Mode, (m: Mode) => void] {
   const [mode, setMode] = useState<Mode>('scatter')
   useEffect(() => {
     const t = setTimeout(() => {
       try {
-        if (localStorage.getItem(storageKey) === 'strip') setMode('strip')
+        const saved = localStorage.getItem(storageKey)
+        if (saved === 'strip' || saved === 'scatter') return setMode(saved)
       } catch {}
+      // phones default to the carousel: scattered stacks every card in one tall column
+      if (window.matchMedia('(max-width: 767px)').matches) setMode('strip')
     }, 0)
     return () => clearTimeout(t)
   }, [storageKey])

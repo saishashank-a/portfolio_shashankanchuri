@@ -174,7 +174,8 @@ body {
   animation-direction: reverse;
 }
 
-.marquee:hover .marquee-track {
+.marquee:hover .marquee-track,
+.marquee:active .marquee-track {
   animation-play-state: paused;
 }
 
