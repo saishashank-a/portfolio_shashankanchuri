@@ -23,7 +23,7 @@ const PORTFOLIO_ROOT = REPO_ROOT ?? resolve(DEBRIEF_ROOT, '../Portfolio')
 const OUTPUT_JSON = join(PORTFOLIO_ROOT, 'src/data/debrief.json')
 
 // ─── Config ─────────────────────────────────────────────────────────────────
-const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_4fPg532j_PZtXxg34tu1EMx5k7Jny7ug1'
+const RESEND_API_KEY = process.env.RESEND_API_KEY
 const FROM_ADDR = 'Morning Debrief <debrief@shashankanchuri.space>'
 const DEBRIEF_URL = 'https://shashankanchuri.space/debrief'
 
