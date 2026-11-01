@@ -10,6 +10,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'FramesBond',
+    impact: 'AI video editing and publishing studio: finds highlights, cuts them to the beat, ships long-form and Shorts',
+    description:
+      'Vision-model highlight scoring that rates, tags and filters clips with cost estimates and a spending cap per run. Beat, drop and energy analysis cuts highlights to music; renders long-form videos and vertical Shorts, publishes on a schedule, and runs custom detectors as sandboxed WebAssembly plugins. In progress.',
+    tech: ['TypeScript', 'Python', 'Vision LLMs', 'WebAssembly'],
+    featured: true,
+  },
+  {
+    title: 'Research Cartographer',
+    impact: 'Map a research field from one search, fully local RAG with no API keys',
+    description:
+      'Retrieves arXiv and OpenAlex papers, reranks with a cross-encoder, then a local LLM extracts structured paper cards and synthesises a field map (clusters, tensions, open problems), streamed live to the UI over SSE.',
+    tech: ['FastAPI', 'Next.js', 'Ollama', 'Sentence-Transformers', 'SSE'],
+    github: 'https://github.com/saishashank-a/research-cartographer',
+    featured: true,
+  },
+  {
+    title: 'Catch Me If You Scan',
+    impact: 'Claude Code plugin that QA-tests web apps like a senior manual tester; caught 10+ pre-release bugs in a production ATS',
+    description:
+      'Derives scenarios from user stories, sweeps UI edge cases, tests multi-role flows, monitors network traffic and files evidence-backed bug reports with Playwright.',
+    tech: ['Claude Code', 'Playwright', 'Agents'],
+    github: 'https://github.com/saishashank-a/catch-me-if-you-scan',
+    featured: true,
+  },
+  {
     title: 'Spoiled Duckie',
     impact: 'Cinematic e-commerce storefront with animated loading ribbons, smooth-scroll, and full category/product/account flows',
     description:
@@ -57,11 +83,11 @@ export const projects: Project[] = [
   },
   {
     title: 'High-Performance Review Analysis',
-    impact: 'GPU-accelerated clustering on 1M+ reviews, 240x faster topic grouping',
+    impact: 'GPU-accelerated topic clustering, 240x faster than LLM-based consolidation',
     description:
       'Local LLM-based topic extraction with Metal GPU acceleration (4.3x speedup). 48 parallel workers with semantic deduplication and HDBSCAN clustering.',
     tech: ['Python', 'Metal GPU', 'HDBSCAN', 'Flask'],
-    github: 'https://github.com/saishashank-a/Trend-Analysis-Report-System',
+    github: 'https://github.com/saishashank-a/Trend-Analysis-Report-System.',
   },
   {
     title: 'Predictive Log Analysis & AIOps',
@@ -77,22 +103,12 @@ export const projects: Project[] = [
     description:
       'Cross-platform habit tracker with offline SQLite persistence, streak tracking, financial data, health metrics, and automated workout logging via HealthKit.',
     tech: ['React Native', 'Expo', 'SQLite', 'TypeScript'],
-    github: 'https://github.com/Scynaero/LockIn-KMP',
-  },
-  {
-    title: 'Nextenti Chatbot POC',
-    impact: 'AI-powered candidate screening chatbot for healthcare recruitment',
-    description:
-      'End-to-end NLP chatbot for candidate screening and recruitment support at Nextenti Tech. Improves response accuracy and user engagement across the hiring pipeline.',
-    tech: ['Python', 'NLP', 'FastAPI', 'MongoDB'],
-    github: 'https://github.com/saishashank-a/NextEnti_chatbot_POC',
   },
   {
     title: 'Earthquake Magnitude Prediction',
-    impact: 'Published ML research, CNN+GRU hybrid outperforms baseline regression',
+    impact: 'Paper accepted at ICICT 2024 (Bentham Science proceedings)',
     description:
-      'Hybrid CNN–GRU model analyzing spatial-temporal seismic data. Advanced preprocessing including denoising and normalization to reduce overfitting by 18%.',
+      'Hybrid CNN-GRU model on the STEAD seismic dataset: magnitude MAE 0.30 / RMSE 0.37, beating a CNN baseline (MAE 0.47), with 99.94% accuracy on earthquake vs noise detection.',
     tech: ['Python', 'TensorFlow', 'CNN', 'GRU'],
-    github: 'https://github.com/Akhil-Kambhatla/ARIMA-vs-TBATS',
   },
 ]

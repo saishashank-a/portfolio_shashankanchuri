@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Cursor } from '@/components/ui/Cursor'
 import { TileBorder } from '@/components/ui/TileBorder'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({
@@ -33,18 +34,19 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'portfolio-ShashankAnchuri',
+  metadataBase: new URL('https://shashankanchuri.space'),
+  title: 'Shashank Anchuri | AI Engineer',
   description:
-    'AI Engineer building intelligent systems across the full stack. RAG pipelines, AIOps, mobile apps, and published ML research.',
+    'Shashank Anchuri, AI engineer in Hyderabad. Leads a team building a multi-tenant healthcare ATS; builds RAG pipelines, AI agents and AI video tools. Writes the Context Window blog and podcast.',
   openGraph: {
-    title: 'portfolio-ShashankAnchuri',
+    title: 'Shashank Anchuri | AI Engineer',
     description:
       'AI Engineer building intelligent systems across the full stack.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'portfolio-ShashankAnchuri',
+    title: 'Shashank Anchuri | AI Engineer',
     description:
       'AI Engineer building intelligent systems across the full stack.',
   },
@@ -68,6 +70,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

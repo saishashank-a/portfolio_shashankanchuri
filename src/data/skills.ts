@@ -6,15 +6,15 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Languages',
-    skills: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'GoLang', 'Rust', 'C', 'HTML5'],
+    skills: ['Python', 'TypeScript', 'JavaScript', 'Java', 'SQL', 'HTML5'],
   },
   {
     label: 'Backend & Cloud',
-    skills: ['FastAPI', 'Django', 'Flask', 'Docker', 'Kubernetes', 'Ray', 'ChromaDB', 'SQLite'],
+    skills: ['FastAPI', 'Spring Boot', 'Next.js', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'Kubernetes'],
   },
   {
     label: 'AI / ML',
-    skills: ['TensorFlow', 'Scikit-Learn', 'Pandas', 'Sentence-Transformers', 'HDBSCAN', 'Ollama'],
+    skills: ['RAG', 'LangGraph', 'MCP', 'Ollama', 'Sentence-Transformers', 'ChromaDB', 'HDBSCAN', 'PyTorch'],
   },
   {
     label: 'Tools',

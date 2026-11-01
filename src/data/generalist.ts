@@ -13,7 +13,7 @@ export const domains: Domain[] = [
   {
     icon: '⚙️',
     title: 'Production Engineering',
-    example: 'AIOps platform at Secureworks, anomaly detection on enterprise log pipelines',
+    example: 'Multi-tenant healthcare ATS live with a major hospital network, Postgres RLS tenant isolation',
   },
   {
     icon: '📱',
